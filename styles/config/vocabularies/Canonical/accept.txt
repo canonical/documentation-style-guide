@@ -12,6 +12,7 @@ ACLs
 ADB
 ADSys
 AKS
+allowlist
 AMC
 amd
 AMS
