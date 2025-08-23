@@ -358,6 +358,8 @@ WoU
 WSL
 Xenial
 Xerus
+YARF
+Yet Another Robot Framework
 ZFS
 ZooKeeper
 zSystems
