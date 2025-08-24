@@ -813,7 +813,7 @@ Inform the user the link is external to the current doc set by specifying the so
 If clicking the link performs an action, like downloading a file, link the
 entire action in the sentence.
 
-- Use: `First, [download `file.zip`](file.zip)`
+- Use: `First, [download file.zip](file.zip)`
 - Avoid: `First, download the [file](file.zip)`
 
 ## FAQs
