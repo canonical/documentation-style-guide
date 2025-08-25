@@ -686,8 +686,7 @@ those using translated documentation.
 
 ### Bold vs. Italics
 
-Use bold for UI elements the user clicks/selects, and quotes or quotes with italics when drawing attention to a
-specific word or phrase, or using the name of a word as a word.
+Use bold for UI elements the user clicks/selects. Use quotes or quotes with italics to draw attention to a specific word or phrase, or when referring to a word rather than using it normally.
 
 For example:
 
