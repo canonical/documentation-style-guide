@@ -3,7 +3,7 @@ extends: spelling
 message: "The word '%s' seems to be misspelled."
 level: error
 scope:
-  - summary
+  - sentence
   - list
   - table.header
   - table.cell
