@@ -11,3 +11,5 @@ dicpath: "config/dictionaries/"
 dictionaries:
   - en_US
   # - en_GB
+filters:
+  - '\w*[\-_]\w*'
