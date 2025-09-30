@@ -11,9 +11,5 @@ dicpath: "config/dictionaries/"
 dictionaries:
   - en_US
   # - en_GB
-custom: true
 filters:
   - '\w*_+\w*'
-  - '[A-Z]{1}[a-z]+[A-Z]+\w+'
-  - '[^a-zA-Z_-]'
-  - '[A-Z]+$'
