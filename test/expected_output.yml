@@ -1,5 +1,9 @@
-test000.rst:
+test000.rst: # Tests scope of rule
   rule: 000-US-spellcheck
   matches:
     - Frist
     - wrod
+test000.md:
+  rule: 000-US-spellcheck
+  matches:
+    - someting

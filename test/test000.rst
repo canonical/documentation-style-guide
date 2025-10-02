@@ -1,7 +1,7 @@
+.. Test file for 000-US-spellcheck.yml
+
 Test
 ====
-
-This is a test for spelling rules.
 
 .. code-block::
 
