@@ -1,0 +1,5 @@
+test000.rst:
+  rule: 000-US-spellcheck
+  matches:
+    - Frist
+    - wrod
