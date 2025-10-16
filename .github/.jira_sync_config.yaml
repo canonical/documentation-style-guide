@@ -1,5 +1,6 @@
 settings:
   jira_project_key: "DOCPR"
+  epic_key: "DOCPR-2128"
   components:
     - Style Guide
   labels:
