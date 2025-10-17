@@ -3,7 +3,7 @@ extends: spelling
 message: "The word '%s' seems to be misspelled."
 level: error
 scope:
-  - summary
+  - sentence
   - list
   - table.header
   - table.cell
@@ -12,5 +12,4 @@ dictionaries:
   - en_US
   # - en_GB
 filters:
- - '\.\. (code-block|code|sourcecode)::.*(\n {3,}:\w+:( .+)?\n)*(\n {3,}.*|\n)*(\n^\S)'
- - ^```[^\n\{\}]*\n(([^\n`].*\n|\n))*```
+  - '\w*_+\w*'
