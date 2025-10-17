@@ -177,6 +177,7 @@ Linkerd
 Linux
 LinuxONE
 Livepatch
+LTS
 LTV
 LXC
 LXD
