@@ -686,8 +686,7 @@ those using translated documentation.
 
 ### Bold vs. Italics
 
-Use bold for UI elements the user clicks/selects, and quotes or quotes with italics when drawing attention to a
-specific word or phrase, or using the name of a word as a word.
+Use bold for UI elements the user clicks/selects. Use quotes or quotes with italics to draw attention to a specific word or phrase, or when referring to a word rather than using it normally.
 
 For example:
 
@@ -813,7 +812,7 @@ Inform the user the link is external to the current doc set by specifying the so
 If clicking the link performs an action, like downloading a file, link the
 entire action in the sentence.
 
-- Use: `First, [download `file.zip`](file.zip)`
+- Use: `First, [download file.zip](file.zip)`
 - Avoid: `First, download the [file](file.zip)`
 
 ## FAQs
