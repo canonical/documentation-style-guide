@@ -39,4 +39,4 @@ swap:
   \b(?:versus|vs\.(?!\w)|vs(?![\.\w])): "'compared to/with' or 'opposed to'"
   \bvia\b: "'through', 'with', or 'using'"
   \bvice\sversa\b: "'the reverse' or 'the other way around'"
-  \b(viz\.(?!\w)|viz(?![\w\.])): "'specifically' or 'namely'"
+  \b(?:viz\.(?!\w)|viz(?![\w\.])): "'specifically' or 'namely'"

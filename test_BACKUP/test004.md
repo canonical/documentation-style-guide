@@ -3,7 +3,9 @@
 This file should generate 25 suggestions for common
 product name mistakes
 
-It's Anbox Cloud, not Anbox cloud or AnBox.
+It's Anbox Cloud
+not Anbox clOud
+or AnBox.
 We say Charmed Kubeflow not Charmed kubeflow.
 The Canonical Observability Stack is called COS and is not
 a Canonical observability stack.

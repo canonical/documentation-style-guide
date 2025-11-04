@@ -12,7 +12,7 @@ scope:
 action:
   name: replace
 swap:
-  Anbox Cloud: Anbox Cloud
+  'anbox cloud' : 'Anbox Cloud'
   Anbox: Anbox
   Charmed Kubeflow: Charmed Kubeflow
   Canononical Observability Stack: Canonical Observability Stack
@@ -32,3 +32,5 @@ swap:
   Ubuntu Core: Ubuntu Core
   Ubuntu Pro: Ubuntu Pro
   Ubuntu Server: Ubuntu Server
+
+# Not working with multi-word terms

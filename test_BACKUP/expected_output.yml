@@ -116,4 +116,8 @@ test500.md:
 test500.rst:
   rule: 500-Repeated-words
   matches:
-    - 
+    - The the
+test500.html:
+  rule: 500-Repeated-words
+  matches:
+    - Managed Managed
