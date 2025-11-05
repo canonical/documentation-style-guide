@@ -124,7 +124,7 @@ def _run_vale(target_file: str, rule_id: str) -> List[ValeResult]:
     results: List[ValeResult] = []
     for h in raw_hits:
         span = None
-        if all(k in h for k in ("Span")) and isinstance(h.get("Span"), list):
+        if 'Span' in h and isinstance(h.get('Span'), list):
             span_list = h.get("Span")
             if isinstance(span_list, list) and len(span_list) == 2:
                 span = (span_list[0], span_list[1])

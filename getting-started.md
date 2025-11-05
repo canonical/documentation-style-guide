@@ -153,6 +153,6 @@ in the root directory `documentation-style-guide/`.
 Some rules can be ignored conditionally, these conditions can come in a variety
 of forms.
 
-Rulesets that extend the default `existance` rule can use the dictionary to
+Rulesets that extend the default `existence` rule can use the dictionary to
 ignore specific terms (including hyphenated terms or terms consisting of
 multiple words).
