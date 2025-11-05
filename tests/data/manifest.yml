@@ -1,0 +1,53 @@
+rules:
+  000-US-spellcheck:
+    cases:
+      - id: misspell
+        filetypes: [md, rst]
+        content: |
+          This Frist wrod has someting incorrect.
+        expect:
+          triggers:
+            - Frist
+            - wrod
+            - someting
+          severity: error
+      - id: clean
+        filetypes: [md, rst]
+        content: |
+          This first word has something correct.
+        expect:
+          triggers: []
+  500-Repeated-words:
+    cases:
+      - id: repeat-html
+        filetypes: [html]
+        content: |
+          <p>Managed Managed services overview.</p>
+        expect:
+          triggers:
+            - Managed Managed
+          severity: warning
+      - id: repeat-rst
+        filetypes: [rst]
+        content: |
+          The the example shows repetition.
+        expect:
+          triggers:
+            - The the
+          severity: warning
+      - id: clean-html
+        filetypes: [html]
+        content: |
+          <div>Managed services overview.</div>
+        expect:
+          triggers: []
+      - id: clean-rst
+        filetypes: [rst]
+        content: |
+          This example shows proper wording.
+        expect:
+          triggers: []
+
+# Notes:
+# - Add additional rules incrementally following the same schema.
+# - Set VALE_ENFORCE_COVERAGE=1 to require every style rule appear here.
