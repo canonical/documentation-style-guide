@@ -27,10 +27,12 @@ swap:
   MicroOVN: MicroOVN
   MicroStack: MicroStack
   Multipass: Multipass
+  (?<=Canonical )Observability Stack: Observability Stack
   Snapcraft: Snapcraft
   snapd: snapd # Vale seems to allow normal capitalisation, may need specific existence rule for Snapd
   Ubuntu Core: Ubuntu Core
-  Ubuntu Pro: Ubuntu Pro
+  (?<=Ubuntu )Pro: Pro
   Ubuntu Server: Ubuntu Server
 
-# Not working with multi-word terms
+# Not working with multi-word terms that have the first word in the accept list
+# Workaround is to positive lookbehind for the term

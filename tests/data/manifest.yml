@@ -85,7 +85,7 @@ rules:
             - AnBox
             - charmed
             - kubeflow
-            # - Canonical observability stack
+            - observability stack
             - JuJu
             - juju
             - LandScape
@@ -105,8 +105,7 @@ rules:
             - snapcraft
             - snapD
             - SnapD
-            - Snapd
-            # - Ubuntu pro
+            - pro
           severity: error
   # 005-Industry-product-names:
   #   cases:
