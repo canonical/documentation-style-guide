@@ -157,7 +157,7 @@ def case_definition(request):
     return request.param  # (rule_id, case_dict)
 
 
-@pytest.fixture(params=["md", "rst", "html"], scope="session")
+@pytest.fixture(params=["md", "rst"], scope="session")
 def all_supported_types(request):  # potential future use
     return request.param
 

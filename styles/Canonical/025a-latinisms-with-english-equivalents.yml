@@ -1,19 +1,16 @@
-# 025 - Latinisms that have English equivalents
-
 extends: substitution
 message: "Instead of '%[2]s', use %[1]s."
 link: https://docs.ubuntu.com/styleguide/en#latin-words-and-phrases
-level: suggestion
+level: error
 scope:
   - sentence
   - list
   - heading
   - table.header
   - table.cell
-nonword: true
 ignorecase: true
 swap:
-  \ba\spriori\b: "'self-evident', 'presupposed', 'presumed', or 'assumed'"
+  "a\\spriori": "'self-evident', 'presupposed', 'presumed', or 'assumed'"
   \bad\shoc\b: "'unscheduled', 'unexpected', 'improvised', 'temporary', or 'bespoke'"
   \bad\sinfinitum\b: "'and so on', 'to the fullest extent', or 'recursively'"
   \bcf\.?\b: "'refer to'"

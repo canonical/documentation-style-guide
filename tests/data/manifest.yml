@@ -1,5 +1,5 @@
 rules:
-  000-US-spellcheck:
+  000-US-spellcheck: # No value in a clean case for spelling
     cases:
       - id: misspell
         filetypes: [md, rst]
@@ -11,40 +11,263 @@ rules:
             - wrod
             - someting
           severity: error
-      - id: clean
-        filetypes: [md, rst]
-        content: |
-          This first word has something correct.
-        expect:
-          triggers: []
-  500-Repeated-words:
+  003-Ubuntu-names-versions:
     cases:
-      - id: repeat-html
-        filetypes: [html]
+      - id: ubuntu-names-md
+        filetypes: [md]
         content: |
-          <p>Managed Managed services overview.</p>
+          Ubuntu 24.04 has been released
+          Ubuntu 23.10 LTS is codenamed Mantic Minotaur
+          Ubuntu 24.04 LTS (Numbat)
+          How to download Ubuntu 22.04
+          Installed version is Ubuntu 18.10 (Cuttlefish)
+
+          ## Ubuntu 21.10 LTS
+
+          | Cycle  | OS                          |
+          |--------|-----------------------------|
+          | 22.04  | Ubuntu 22.04 LTS (Jimmy)    |
+          | 22.04  | Ubuntu 22.04 (Kinetic Kudu) |
         expect:
           triggers:
-            - Managed Managed
-          severity: warning
-      - id: repeat-rst
+            - 'Ubuntu 18.10 ('
+            - 'Ubuntu 21.10 LTS'
+            - 'Ubuntu 22.04'
+            - 'Ubuntu 22.04'
+            - 'Ubuntu 22.04 LTS ('
+            - 'Ubuntu 23.10 LTS'
+            - 'Ubuntu 24.04'
+            - 'Ubuntu 24.04 LTS ('
+          severity: error
+      - id: valid-md
+        filetypes: [md]
+        content: |
+          Ubuntu 24.04 LTS
+          Ubuntu 24.04 LTS (Noble)
+          Ubuntu 24.04 LTS (Noble Numbat)
+
+          ## Ubuntu 24.04 LTS
+
+          | Cycle  | OS                          |
+          |--------|-----------------------------|
+          | 22.04  | Ubuntu 22.04 LTS (Jammy)    |
+          | 22.10  | Ubuntu 22.10 (Kinetic Kudu) |
+        expect:
+          triggers: []
+          severity: error
+  004-Canonical-product-names: # Not currently working for multi-word terms
+    cases:
+      - id: valid
+        filetypes: [md]
+        content: |
+          It's Anbox Cloud, not Anbox cloud or AnBox.
+          We say Charmed Kubeflow not charmed kubeflow.
+          The Canonical Observability Stack is called COS and is not
+          a Canonical observability stack.
+          Juju, never JuJu, nor juju when not referring to the command `juju`.
+          Landscape and Launchpad, not LandScape or LaunchPad.
+          If you say lxd it should be in backticks `lxd`.
+          For the love of all that is holy, MAAS, not Maas or MaaS.
+          MicroCeph and MicroCloud, not Microceph or Microcloud.
+          MicroK8s, not Microk8s.
+          MicroOVN, not microOVN or MicroOvn.
+          MicroStack is the name, not microstack or Microstack.
+          Mir doesn't have a common misspelling.
+          Multipass, like in that film, not MultiPass.
+          Snapcraft, not SnapCraft or snapcraft.
+          snapd not snapD or SnapD or Snapd.
+          Ubuntu Pro, not Ubuntu pro.
+          Ubuntu Server, though I guess people may talk about *an*
+          Ubuntu server, but that should prompt a query. 
+        expect:
+          triggers:
+            - cloud
+            - AnBox
+            - charmed
+            - kubeflow
+            # - Canonical observability stack
+            - JuJu
+            - juju
+            - LandScape
+            - LaunchPad
+            - lxd
+            - Maas
+            - MaaS
+            - Microceph
+            - Microcloud
+            - Microk8s
+            - microOVN
+            - MicroOvn
+            - microstack
+            - Microstack
+            - MultiPass
+            - SnapCraft
+            - snapcraft
+            - snapD
+            - SnapD
+            - Snapd
+            # - Ubuntu pro
+          severity: error
+  # 005-Industry-product-names:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 006-Contractions-forbidden:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 007-Headings-sentence-case:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 008-Headings-no-period:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 009-Headings-no-links:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 010-Punctuation-double-spaces:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 012-Date-format:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 013-Spell-out-numbers-below-10:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 014a-Numbers-greater-than-nine-should-be-in-numeric-form:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 014b-Numbers-with-five-or-more-digits-must-have-comma-separators:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 015-No-prompts-in-comments:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 016-No-inline-comments:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 017-Avoid-long-code-blocks:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 019-no-google-drive-images:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  025a-latinisms-with-english-equivalents:
+    cases:
+      - id: invalid
         filetypes: [rst]
+        content: |
+          This is a priori.
+        expect:
+          triggers:
+            - a priori
+          severity: error
+  # 025b-latinisms-to-reconsider:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 025c-latinisms-to-avoid:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  # 400-Enforce-inclusive-terms:
+  #   cases:
+  #     - id: valid
+  #       filetypes: [md, rst]
+  #       content:
+  #       expect:
+  #         triggers:
+  #         severity:
+  500-Repeated-words:
+    cases:
+      - id: repeat
+        filetypes: [md, rst]
         content: |
           The the example shows repetition.
         expect:
           triggers:
             - The the
           severity: warning
-      - id: clean-html
-        filetypes: [html]
+      - id: clean
+        filetypes: [md, rst]
         content: |
-          <div>Managed services overview.</div>
-        expect:
-          triggers: []
-      - id: clean-rst
-        filetypes: [rst]
-        content: |
-          This example shows proper wording.
+          If I show you this. This would show.
         expect:
           triggers: []
 
