@@ -1,3 +1,4 @@
+# Rules that are set for removal have not been included
 rules:
   000-US-spellcheck: # No value in a clean case for spelling
     cases:
