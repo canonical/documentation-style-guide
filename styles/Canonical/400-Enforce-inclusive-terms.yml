@@ -18,7 +18,7 @@ tokens:
   - (?<!jenkins\-)slaves?
   - chairman
   - foreman
-  - dumm(y|ies)
+  - dum(b|my|mies)
   - grandfather(ed)?
   - guys?
   - hangs?

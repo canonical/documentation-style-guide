@@ -10,4 +10,7 @@ scope:
 alpha: true
 ignorecase: true
 tokens:
-  - '[^\s]+'
+  - '(\w\n?)+'
+
+
+  ## Currently not detecting across multiple lines

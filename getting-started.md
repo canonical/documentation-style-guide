@@ -147,3 +147,12 @@ in the root directory `documentation-style-guide/`.
 **My rule isn't getting applied to the text**
 * Make sure the rule file uses the extension `.yml` instead of `.yaml`
 * There might be a hidden syntax issue - consider using a local YAML linter or [online tool](https://jsonformatter.org/yaml-validator) to validate your rule.
+
+### Conditionally ignoring rules
+
+Some rules can be ignored conditionally, these conditions can come in a variety
+of forms.
+
+Rulesets that extend the default `existence` rule can use the dictionary to
+ignore specific terms (including hyphenated terms or terms consisting of
+multiple words).

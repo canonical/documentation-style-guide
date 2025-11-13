@@ -6,6 +6,7 @@ message: |
 link: https://docs.ubuntu.com/styleguide/en/#ubuntu
 nonword: true
 ignorecase: true
+vocab: false
 scope: 
   - sentence
   - list

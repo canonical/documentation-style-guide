@@ -1,7 +1,6 @@
 extends: substitution
-message: "Use '%s' instead of '%s'"
+message: "Use '%[1]s' instead of '%[2]s'"
 link: https://docs.ubuntu.com/styleguide/en/#other-canonical-products
-ignorecase: true
 level: error
 scope:
   - sentence & ~blockquote
@@ -9,12 +8,13 @@ scope:
   - heading
   - table.header
   - table.cell
-action:
-  name: replace
+ignorecase: true
+nonword: true
 swap:
-  Anbox Cloud: Anbox Cloud
+  "(?<=Anbox )Cloud": "Cloud" # Because Anbox is a dictionary term, multi-word capture does not work
   Anbox: Anbox
-  Charmed Kubeflow: Charmed Kubeflow
+  Kubeflow: "Kubeflow"
+  "Charmed(?= kubeflow)": "Charmed"
   Canononical Observability Stack: Canonical Observability Stack
   Juju: Juju
   Landscape(?! environment| layout): Landscape
@@ -27,8 +27,12 @@ swap:
   MicroOVN: MicroOVN
   MicroStack: MicroStack
   Multipass: Multipass
+  (?<=Canonical )Observability Stack: Observability Stack
   Snapcraft: Snapcraft
-  snapd: snapd
+  snapd: snapd # Vale seems to allow normal capitalisation, may need specific existence rule for Snapd
   Ubuntu Core: Ubuntu Core
-  Ubuntu Pro: Ubuntu Pro
+  (?<=Ubuntu )Pro: Pro
   Ubuntu Server: Ubuntu Server
+
+# Not working with multi-word terms that have the first word in the accept list
+# Workaround is to positive lookbehind for the term

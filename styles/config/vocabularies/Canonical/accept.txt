@@ -177,6 +177,7 @@ Linkerd
 Linux
 LinuxONE
 Livepatch
+LTS
 LTV
 LXC
 LXD
@@ -295,7 +296,7 @@ SLA
 SMTP
 Snapcraft
 snapcrafting
-Snapd
+snapd
 Snap Store Proxy
 SOW
 Spark
