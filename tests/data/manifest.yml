@@ -58,8 +58,8 @@ rules:
           severity: error
   004-Canonical-product-names: # Not currently working for multi-word terms
     cases:
-      - id: valid
-        filetypes: [md]
+      - id: canonical-product-names
+        filetypes: [md, rst]
         content: |
           It's Anbox Cloud, not Anbox cloud or AnBox.
           We say Charmed Kubeflow not charmed kubeflow.
