@@ -1,0 +1,110 @@
+{
+  "$defs": {
+    "ExpectedResult": {
+      "description": "Expected result portion of a test case.\n\ntriggers: list of exact substrings Vale should flag. Empty list means no findings.\nseverity: optional; if provided we assert all findings share this severity.\nmessage_regex: optional regex that all messages must match.",
+      "properties": {
+        "triggers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Triggers",
+          "type": "array"
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity"
+        },
+        "message_regex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Regex"
+        }
+      },
+      "title": "ExpectedResult",
+      "type": "object"
+    },
+    "RuleDefinition": {
+      "description": "All test cases for a single Vale rule.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "cases": {
+          "items": {
+            "$ref": "#/$defs/TestCase"
+          },
+          "title": "Cases",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "cases"
+      ],
+      "title": "RuleDefinition",
+      "type": "object"
+    },
+    "TestCase": {
+      "description": "A single test case for a rule.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "filetypes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Filetypes",
+          "type": "array"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "expect": {
+          "$ref": "#/$defs/ExpectedResult"
+        }
+      },
+      "required": [
+        "id",
+        "filetypes",
+        "content",
+        "expect"
+      ],
+      "title": "TestCase",
+      "type": "object"
+    }
+  },
+  "description": "Root manifest model loaded from YAML.",
+  "properties": {
+    "rules": {
+      "items": {
+        "$ref": "#/$defs/RuleDefinition"
+      },
+      "title": "Rules",
+      "type": "array"
+    }
+  },
+  "required": [
+    "rules"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}
