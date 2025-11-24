@@ -225,10 +225,11 @@ rules:
       - id: latin-terms
         filetypes: [rst]
         content: |
-          This is a priori.
+          This is a priori. Ergo this is also an issue.
         expect:
           triggers:
             - a priori
+            - Ergo
           severity: error
   # 025b-latinisms-to-reconsider:
   #   cases:

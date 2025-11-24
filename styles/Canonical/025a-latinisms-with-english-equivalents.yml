@@ -9,7 +9,7 @@ scope:
   - table.header
   - table.cell
 ignorecase: true
-swap:
+swap: # Multiple word terms need to use "this\\sword" to match properly
   "a\\spriori": "'self-evident', 'presupposed', 'presumed', or 'assumed'"
   \bad\shoc\b: "'unscheduled', 'unexpected', 'improvised', 'temporary', or 'bespoke'"
   \bad\sinfinitum\b: "'and so on', 'to the fullest extent', or 'recursively'"
