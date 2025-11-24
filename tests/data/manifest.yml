@@ -222,7 +222,7 @@ rules:
   #         severity:
   025a-latinisms-with-english-equivalents:
     cases:
-      - id: invalid
+      - id: latin-terms
         filetypes: [rst]
         content: |
           This is a priori.
