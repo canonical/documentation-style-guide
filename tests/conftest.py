@@ -286,3 +286,24 @@ def assert_case():
 def manifest_schema(manifest: Manifest) -> Dict[str, Any]:
     """Provide the JSON schema for the Manifest (Draft generation by Pydantic)."""
     return manifest.model_json_schema()
+
+@pytest.fixture
+def run_vale_pipe_md(request):
+    echo_bin = shutil.which("echo")
+    vale_bin = shutil.which("vale")
+    pipe_cmd = [
+        echo_bin,
+        request.param,
+    ]
+    vale_cmd = [
+        vale_bin,
+        "--config",
+        VALE_CONFIG,
+        "--ext",
+        ".md",
+    ]
+    cmd1 = subprocess.Popen(pipe_cmd, stdout=subprocess.PIPE)
+    cmd2 = subprocess.run(vale_cmd, stdin=cmd1.stdout)
+    cmd1.wait()
+
+    return cmd2
