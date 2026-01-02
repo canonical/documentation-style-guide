@@ -742,7 +742,7 @@ rules:
 
           40+ lines is acceptable (with a language specifier):
 
-          .. code:: yaml
+          .. code:: text
 
              Line 01 of 40
              Line 02
