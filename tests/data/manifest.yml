@@ -299,51 +299,7 @@ rules:
       - id: warning-long-code-md
         filetypes: [md]
         content: |
-          39 lines is acceptable:
-
-          ```
-          Line 01 of 39
-          Line 02
-
-          Line 04
-          Line 05
-          Line 06
-          Line 07
-          Line 08
-          Line 09
-          Line 10
-          Line 11
-
-
-          Line 14
-          Line 15
-          Line 16
-          Line 17
-          Line 18
-          Line 19
-          Line 20
-          Line 21
-
-
-          Line 24
-          Line 25
-          Line 26
-          Line 27
-          Line 28
-          Line 29
-          Line 30
-          Line 31
-
-
-          Line 34
-          Line 35
-          Line 36
-          Line 37
-          Line 38
-          Line 39
-          ```
-
-          40 lines is not acceptable:
+          40 lines is acceptable:
 
           ```
           Line 01 of 40
@@ -388,10 +344,10 @@ rules:
           Line 40
           ```
 
-          39 lines is acceptable (with a language specifier):
+          41 lines is not acceptable:
 
-          ```text
-          Line 01 of 39
+          ```
+          Line 01 of 41
           Line 02
 
           Line 04
@@ -430,9 +386,11 @@ rules:
           Line 37
           Line 38
           Line 39
+          Line 40
+          Line 41
           ```
 
-          40 lines is not acceptable (with a language specifier):
+          40 lines is acceptable (with a language specifier):
 
           ```text
           Line 01 of 40
@@ -475,6 +433,52 @@ rules:
           Line 38
           Line 39
           Line 40
+          ```
+
+          41 lines is not acceptable (with a language specifier):
+
+          ```text
+          Line 01 of 41
+          Line 02
+
+          Line 04
+          Line 05
+          Line 06
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+
+
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+
+
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+
+
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          Line 41
           ```
 
           The end!
@@ -482,7 +486,7 @@ rules:
           triggers:
             - |-  # |- because we don't want the newline at the end.
               ```
-              Line 01 of 40
+              Line 01 of 41
               Line 02
 
               Line 04
@@ -522,10 +526,11 @@ rules:
               Line 38
               Line 39
               Line 40
+              Line 41
               ```
             - |-  # |- because we don't want the newline at the end.
               ```text
-              Line 01 of 40
+              Line 01 of 41
               Line 02
 
               Line 04
@@ -565,6 +570,7 @@ rules:
               Line 38
               Line 39
               Line 40
+              Line 41
               ```
           severity: warning
       - id: warning-long-code-rst
