@@ -576,9 +576,9 @@ rules:
       - id: warning-long-code-rst
         filetypes: [rst]
         content: |
-          39 lines is acceptable::
+          40 lines is acceptable::
 
-             Line 01 of 39
+             Line 01 of 40
              Line 02
 
              Line 04
@@ -617,10 +617,11 @@ rules:
              Line 37
              Line 38
              Line 39
+             Line 40
 
-          40 lines is not acceptable::
+          41 lines is not acceptable::
 
-             Line 01 of 40
+             Line 01 of 41
              Line 02
 
              Line 04
@@ -660,6 +661,7 @@ rules:
              Line 38
              Line 39
              Line 40
+             Line 41
 
           37 lines is acceptable:
 
@@ -797,7 +799,7 @@ rules:
             - |
               ::
 
-                 Line 01 of 40
+                 Line 01 of 41
                  Line 02
 
                  Line 04
@@ -837,6 +839,7 @@ rules:
                  Line 38
                  Line 39
                  Line 40
+                 Line 41
             - |+  # |+ because we want the extra newline at the end.
               .. code::
 
