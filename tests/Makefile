@@ -28,3 +28,6 @@ lint:
 	$(runner) ruff check
 	$(runner) ruff format --diff
 	$(runner) pyright
+
+clean:
+	@rm -rf *.egg-info .venv __pycache__ .pytest_cache .ruff_cache
