@@ -26,14 +26,17 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
 
-      - name: Install Python dependencies
+      - name: Create an environment with Python dependencies
+        working-directory: tests
         run: |
-          pip install -r tests/requirements.txt
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install -e .
 
       - name: Run pytest suite
         env:
           # Set to 1 once manifest covers ALL style rules to enforce coverage.
           VALE_ENFORCE_COVERAGE: 0
         run: |
-          python -m pytest -q || python -m pytest -vv
-
+          . .venv/bin/activate
+          make run
