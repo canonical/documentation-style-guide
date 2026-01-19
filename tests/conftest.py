@@ -72,7 +72,7 @@ class Manifest(BaseModel):
         """
         rules_dict = data.get("rules", {})
         rules = [
-            {"name": rule_name, "cases": rule_data.get("cases", [])}
+            RuleDefinition(name=rule_name, cases=rule_data.get("cases", []))
             for rule_name, rule_data in rules_dict.items()
         ]
         return cls(rules=rules)
