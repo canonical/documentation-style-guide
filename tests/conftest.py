@@ -4,6 +4,7 @@ Initial version: focuses on a subset of rules with a data-driven manifest.
 Extensible: add new rules/cases via `tests/data/manifest.yml`.
 Set environment variable VALE_ENFORCE_COVERAGE=1 to enforce full rule coverage.
 """
+
 from __future__ import annotations
 
 import json
@@ -33,6 +34,7 @@ class ExpectedResult(BaseModel):
     severity: optional; if provided we assert all findings share this severity.
     message_regex: optional regex that all messages must match.
     """
+
     triggers: List[str] = Field(default_factory=list)
     severity: str | None = None
     message_regex: str | None = None
@@ -40,6 +42,7 @@ class ExpectedResult(BaseModel):
 
 class TestCase(BaseModel):
     """A single test case for a rule."""
+
     id: str
     filetypes: List[str]
     content: str
@@ -48,12 +51,14 @@ class TestCase(BaseModel):
 
 class RuleDefinition(BaseModel):
     """All test cases for a single Vale rule."""
+
     name: str
     cases: List[TestCase]
 
 
 class Manifest(BaseModel):
     """Root manifest model loaded from YAML."""
+
     rules: List[RuleDefinition]
 
     @classmethod
@@ -93,11 +98,7 @@ def _load_manifest() -> Manifest:
 def _discover_rule_ids() -> List[str]:
     if not os.path.isdir(STYLES_DIR):
         return []
-    return sorted(
-        f.rsplit(".", 1)[0]
-        for f in os.listdir(STYLES_DIR)
-        if f.endswith(".yml")
-    )
+    return sorted(f.rsplit(".", 1)[0] for f in os.listdir(STYLES_DIR) if f.endswith(".yml"))
 
 
 @pytest.fixture(scope="session")
@@ -176,7 +177,7 @@ def _run_vale(target_file: str, rule_id: str) -> List[ValeResult]:
     results: List[ValeResult] = []
     for h in raw_hits:
         span = None
-        if 'Span' in h and isinstance(h.get('Span'), list):
+        if "Span" in h and isinstance(h.get("Span"), list):
             span_list = h.get("Span")
             if isinstance(span_list, list) and len(span_list) == 2:
                 span = (span_list[0], span_list[1])
@@ -195,12 +196,15 @@ def _run_vale(target_file: str, rule_id: str) -> List[ValeResult]:
 def _iter_cases(manifest: Manifest) -> Iterable[Tuple[str, TestCase]]:
     return manifest.iter_cases()
 
+
 def _idfn(param):
     rule, case = param
     return f"{rule}::{case.id}"
 
 
 _ALL_CASES = list(_iter_cases(_load_manifest()))
+
+
 @pytest.fixture(params=_ALL_CASES, ids=_idfn)
 def case_definition(request):
     """Parametrized (rule_id, TestCase) tuple for each case in the manifest."""
@@ -250,10 +254,11 @@ def _assert_case(rule_id: str, case: TestCase, results: List[ValeResult]):
 
     # For tokens with multiplicity in EXPECTED, ensure counts are met.
     from collections import Counter
+
     exp_counts = Counter(expected_list)
     act_counts = Counter(actual_list)
     multiplicity_failures = [
-        f"{tok} (expected >= {exp_counts[tok]}, got {act_counts.get(tok,0)})"
+        f"{tok} (expected >= {exp_counts[tok]}, got {act_counts.get(tok, 0)})"
         for tok in exp_counts
         if exp_counts[tok] > 1 and act_counts.get(tok, 0) < exp_counts[tok]
     ]
@@ -278,9 +283,11 @@ def _assert_case(rule_id: str, case: TestCase, results: List[ValeResult]):
 def vale_runner():
     return _run_vale
 
+
 @pytest.fixture
 def assert_case():
     return _assert_case
+
 
 @pytest.fixture(scope="session")
 def manifest_schema(manifest: Manifest) -> Dict[str, Any]:

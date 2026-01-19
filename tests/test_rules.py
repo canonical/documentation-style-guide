@@ -1,4 +1,5 @@
 """Data-driven tests for Vale rules using Pydantic models."""
+
 from __future__ import annotations
 
 from typing import Any, Dict
@@ -15,9 +16,7 @@ def test_rule_cases(materialized_files, vale_runner, assert_case):
 def test_manifest_has_positive_example(manifest):
     """Ensure each rule has at least one test case that triggers something."""
     missing = [
-        rule.name
-        for rule in manifest.rules
-        if not any(c.expect.triggers for c in rule.cases)
+        rule.name for rule in manifest.rules if not any(c.expect.triggers for c in rule.cases)
     ]
     assert not missing, (
         "Each rule should have at least one positive (triggering) case. Missing: "
@@ -28,7 +27,8 @@ def test_manifest_has_positive_example(manifest):
 def test_manifest_json_schema(manifest_schema: Dict[str, Any]):
     """Basic sanity checks on generated JSON Schema for the Manifest model."""
     # Top-level required should include 'rules'
-    assert 'rules' in manifest_schema.get('properties', {}), "Schema missing 'rules' property"
+    assert "rules" in manifest_schema.get("properties", {}), "Schema missing 'rules' property"
+
     # Definition for rule cases should mention triggers
     # Pydantic v2 structure: look through schema for 'triggers'
     def _find_key(d: Dict[str, Any], key: str) -> bool:
@@ -39,4 +39,4 @@ def test_manifest_json_schema(manifest_schema: Dict[str, Any]):
                 return True
         return False
 
-    assert _find_key(manifest_schema, 'triggers'), "Schema does not describe 'triggers'"
+    assert _find_key(manifest_schema, "triggers"), "Schema does not describe 'triggers'"
