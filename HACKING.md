@@ -39,14 +39,14 @@ To run the test cases for a particular rule, such as `003-Ubuntu-names-versions`
 - **If uv is installed**
 
     ```text
-    uv run --directory tests pytest -vv -k 003-Ubuntu-names-versions
+    uv run --directory tests pytest -vv -k 003
     ```
 
 - **If uv is not installed**
 
     ```text
     # (provided the working dir is 'tests' and the virtual environment is active)
-    pytest -vv -k 003-Ubuntu-names-versions
+    pytest -vv -k 003
     ```
 
 # Guidance for maintainers of the testing code
