@@ -228,14 +228,7 @@ rules:
   #       expect:
   #         triggers:
   #         severity:
-  # 017-Avoid-long-code-blocks:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  # For 017, see the end of this file, as the content is long.
   # 019-no-google-drive-images:
   #   cases:
   #     - id: valid
@@ -296,6 +289,914 @@ rules:
         expect:
           triggers: []
 
-# Notes:
-# - Add additional rules incrementally following the same schema.
-# - Set VALE_ENFORCE_COVERAGE=1 to require every style rule appear here.
+  # Notes:
+  # - Add additional rules incrementally following the same schema.
+  # - Set VALE_ENFORCE_COVERAGE=1 to require every style rule appear here.
+
+  # 017 is out of sequence because the content is long.
+  017-Avoid-long-code-blocks:
+    cases:
+      - id: long-code-warning-md
+        filetypes: [md]
+        content: |
+          40 lines is acceptable:
+
+          ```
+          Line 01 of 40
+          Line 02
+          Line 03
+          Line 04
+          Line 05
+          Line 06
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          ```
+
+          But 41 lines is NOT acceptable:
+
+          ```
+          Line 01 of 41
+          Line 02
+
+          Line 04
+
+
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          Line 41
+          ```
+
+          This text is outside the code block.
+        expect:
+          triggers:
+            - |-  # |- because we don't want the newline at the end.
+              ```
+              Line 01 of 41
+              Line 02
+
+              Line 04
+
+
+              Line 07
+              Line 08
+              Line 09
+              Line 10
+              Line 11
+              Line 12
+              Line 13
+              Line 14
+              Line 15
+              Line 16
+              Line 17
+              Line 18
+              Line 19
+              Line 20
+              Line 21
+              Line 22
+              Line 23
+              Line 24
+              Line 25
+              Line 26
+              Line 27
+              Line 28
+              Line 29
+              Line 30
+              Line 31
+              Line 32
+              Line 33
+              Line 34
+              Line 35
+              Line 36
+              Line 37
+              Line 38
+              Line 39
+              Line 40
+              Line 41
+              ```
+          severity: warning
+      - id: long-code-warning-md-lang
+        filetypes: [md]
+        content: |
+          40 lines is acceptable:
+
+          ```text
+          Line 01 of 40
+          Line 02
+          Line 03
+          Line 04
+          Line 05
+          Line 06
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          ```
+
+          But 41 lines is NOT acceptable:
+
+          ```text
+          Line 01 of 41
+          Line 02
+
+          Line 04
+
+
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          Line 41
+          ```
+
+          This text is outside the code block.
+        expect:
+          triggers:
+            - |-  # |- because we don't want the newline at the end.
+              ```text
+              Line 01 of 41
+              Line 02
+
+              Line 04
+
+
+              Line 07
+              Line 08
+              Line 09
+              Line 10
+              Line 11
+              Line 12
+              Line 13
+              Line 14
+              Line 15
+              Line 16
+              Line 17
+              Line 18
+              Line 19
+              Line 20
+              Line 21
+              Line 22
+              Line 23
+              Line 24
+              Line 25
+              Line 26
+              Line 27
+              Line 28
+              Line 29
+              Line 30
+              Line 31
+              Line 32
+              Line 33
+              Line 34
+              Line 35
+              Line 36
+              Line 37
+              Line 38
+              Line 39
+              Line 40
+              Line 41
+              ```
+          severity: warning
+      - id: long-code-warning-myst
+        filetypes: [md]
+        content: |
+          40 lines is acceptable:
+
+          ```{code} text
+          :foo: bar
+          Line 01 of 40
+          Line 02
+          Line 03
+          Line 04
+          Line 05
+          Line 06
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          ```
+
+          But 41 lines is NOT acceptable:
+
+          ```{code} text
+          :foo: bar
+          Line 01 of 41
+          Line 02
+
+          Line 04
+
+
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          Line 41
+          ```
+
+          This text is outside the code block.
+
+          A long unrelated directive is acceptable:
+
+          ````{tab-set}
+
+          ```{tab-item} Tab 1
+          Line 01 of 41
+          Line 02
+          Line 03
+          Line 04
+          Line 05
+          Line 06
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          Line 37
+          Line 38
+          Line 39
+          Line 40
+          Line 41
+          ```
+
+          ````
+        expect:
+          triggers:
+            - |-  # |- because we don't want the newline at the end.
+              ```{code} text
+              :foo: bar
+              Line 01 of 41
+              Line 02
+
+              Line 04
+
+
+              Line 07
+              Line 08
+              Line 09
+              Line 10
+              Line 11
+              Line 12
+              Line 13
+              Line 14
+              Line 15
+              Line 16
+              Line 17
+              Line 18
+              Line 19
+              Line 20
+              Line 21
+              Line 22
+              Line 23
+              Line 24
+              Line 25
+              Line 26
+              Line 27
+              Line 28
+              Line 29
+              Line 30
+              Line 31
+              Line 32
+              Line 33
+              Line 34
+              Line 35
+              Line 36
+              Line 37
+              Line 38
+              Line 39
+              Line 40
+              Line 41
+              ```
+          severity: warning
+      - id: long-code-warning-rst-colons
+        filetypes: [rst]
+        content: |
+          40 lines is acceptable::
+
+             Line 01 of 40
+             Line 02
+             Line 03
+             Line 04
+             Line 05
+             Line 06
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+
+          But 41 lines is NOT acceptable::
+
+             Line 01 of 41
+             Line 02
+
+             Line 04
+
+
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+             Line 41
+
+          This text is outside the code block.
+        expect:
+          triggers:
+            - |
+              ::
+
+                 Line 01 of 41
+                 Line 02
+
+                 Line 04
+
+
+                 Line 07
+                 Line 08
+                 Line 09
+                 Line 10
+                 Line 11
+                 Line 12
+                 Line 13
+                 Line 14
+                 Line 15
+                 Line 16
+                 Line 17
+                 Line 18
+                 Line 19
+                 Line 20
+                 Line 21
+                 Line 22
+                 Line 23
+                 Line 24
+                 Line 25
+                 Line 26
+                 Line 27
+                 Line 28
+                 Line 29
+                 Line 30
+                 Line 31
+                 Line 32
+                 Line 33
+                 Line 34
+                 Line 35
+                 Line 36
+                 Line 37
+                 Line 38
+                 Line 39
+                 Line 40
+                 Line 41
+          severity: warning
+      - id: long-code-warning-rst-lang
+        filetypes: [rst]
+        content: |
+          40 lines is acceptable.
+
+          .. code:: text
+
+             Line 01 of 40
+             Line 02
+             Line 03
+             Line 04
+             Line 05
+             Line 06
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+
+          But 41 lines is NOT acceptable.
+
+          .. code:: text
+
+             Line 01 of 41
+             Line 02
+
+             Line 04
+
+
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+             Line 41
+
+          This text is outside the code block.
+        expect:
+          triggers:
+            - |
+              .. code:: text
+
+                 Line 01 of 41
+                 Line 02
+
+                 Line 04
+
+
+                 Line 07
+                 Line 08
+                 Line 09
+                 Line 10
+                 Line 11
+                 Line 12
+                 Line 13
+                 Line 14
+                 Line 15
+                 Line 16
+                 Line 17
+                 Line 18
+                 Line 19
+                 Line 20
+                 Line 21
+                 Line 22
+                 Line 23
+                 Line 24
+                 Line 25
+                 Line 26
+                 Line 27
+                 Line 28
+                 Line 29
+                 Line 30
+                 Line 31
+                 Line 32
+                 Line 33
+                 Line 34
+                 Line 35
+                 Line 36
+                 Line 37
+                 Line 38
+                 Line 39
+                 Line 40
+                 Line 41
+          severity: warning
+      - id: long-code-warning-rst-option
+        filetypes: [rst]
+        content: |
+          40 lines is acceptable.
+
+          .. code::
+             :foo:
+
+             Line 01 of 40
+             Line 02
+             Line 03
+             Line 04
+             Line 05
+             Line 06
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+
+          But 41 lines is NOT acceptable.
+
+          .. code::
+             :foo:
+
+             Line 01 of 41
+             Line 02
+
+             Line 04
+
+
+             Line 07
+             Line 08
+             Line 09
+             Line 10
+             Line 11
+             Line 12
+             Line 13
+             Line 14
+             Line 15
+             Line 16
+             Line 17
+             Line 18
+             Line 19
+             Line 20
+             Line 21
+             Line 22
+             Line 23
+             Line 24
+             Line 25
+             Line 26
+             Line 27
+             Line 28
+             Line 29
+             Line 30
+             Line 31
+             Line 32
+             Line 33
+             Line 34
+             Line 35
+             Line 36
+             Line 37
+             Line 38
+             Line 39
+             Line 40
+             Line 41
+
+          This text is outside the code block.
+        expect:
+          triggers:
+            - |
+              .. code::
+                 :foo:
+
+                 Line 01 of 41
+                 Line 02
+
+                 Line 04
+
+
+                 Line 07
+                 Line 08
+                 Line 09
+                 Line 10
+                 Line 11
+                 Line 12
+                 Line 13
+                 Line 14
+                 Line 15
+                 Line 16
+                 Line 17
+                 Line 18
+                 Line 19
+                 Line 20
+                 Line 21
+                 Line 22
+                 Line 23
+                 Line 24
+                 Line 25
+                 Line 26
+                 Line 27
+                 Line 28
+                 Line 29
+                 Line 30
+                 Line 31
+                 Line 32
+                 Line 33
+                 Line 34
+                 Line 35
+                 Line 36
+                 Line 37
+                 Line 38
+                 Line 39
+                 Line 40
+                 Line 41
+          severity: warning
