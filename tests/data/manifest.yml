@@ -196,14 +196,23 @@ rules:
   #       expect:
   #         triggers:
   #         severity:
-  # 010-Punctuation-double-spaces:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  010-Punctuation-double-spaces:
+    cases:
+      - id: valid
+        filetypes: [md, rst]
+        content: |
+          Two spaces after a sentence.  Is fine if it isn't EOL.
+          Two spaces after EOL is bad.  
+          This will be fine though.
+          How about this?  
+          This is also bad!  
+          And this is fine?
+        expect:
+          triggers:
+            - '.  '
+            - '?  '
+            - '!  '
+          severity: warning
   # 012-Date-format:
   #   cases:
   #     - id: valid

@@ -5,11 +5,10 @@ message: "'%s' should have one space."
 link: 
 level: warning
 scope:
-  - sentence
-  - list
+  - raw
 nonword: true
 tokens:
-  - '[a-z][.?!] {2,}[A-Z]'
+  - '[.?!] {2,}(?=\n)'
 
 # Reasoning:
 # We appreciate that you may have been taught to put two spaces after a 
