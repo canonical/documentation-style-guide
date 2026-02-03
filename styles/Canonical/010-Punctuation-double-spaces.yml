@@ -8,7 +8,7 @@ scope:
   - raw
 nonword: true
 tokens:
-  - '[.?!] {2,}(?=\n)'
+  - '[.?!] {2,}$'
 
 # Reasoning:
 # We appreciate that you may have been taught to put two spaces after a 
