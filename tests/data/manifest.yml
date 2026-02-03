@@ -280,14 +280,85 @@ rules:
   #       expect:
   #         triggers:
   #         severity:
-  # 016-No-inline-comments:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  016-No-inline-comments:
+    cases:
+      - id: md-hash-comments
+        filetypes: [md]
+        content: |
+          Here is some code with inline comments:
+
+          ```python
+          def calculate():
+              result = 42  # This is the answer
+              return result  # Return the value
+          ```
+        expect:
+          triggers:
+            - |-
+              ```python
+              def calculate():
+                  result = 42  # This is the answer
+                  return result  # Return the value
+              ```
+          severity: suggestion
+      - id: md-slash-comments
+        filetypes: [md]
+        content: |
+          Here is some JavaScript with inline comments:
+
+          ```javascript
+          function process() {
+              let value = 10;  // Initialize value
+              return value * 2;  // Double it
+          }
+          ```
+        expect:
+          triggers:
+            - |-
+              ```javascript
+              function process() {
+                  let value = 10;  // Initialize value
+                  return value * 2;  // Double it
+              }
+              ```
+          severity: suggestion
+      - id: rst-hash-comments
+        filetypes: [rst]
+        content: |
+          Here is some code with inline comments.
+
+          .. code-block:: python
+
+             def calculate():
+                 result = 42  # This is the answer
+                 return result  # Return the value
+        expect:
+          triggers:
+            - |
+                .. code-block:: python
+
+                   def calculate():
+                       result = 42  # This is the answer
+          severity: suggestion
+      - id: rst-slash-comments
+        filetypes: [rst]
+        content: |
+          Here is some JavaScript with inline comments.
+
+          .. code-block:: javascript
+
+             function process() {
+                 let value = 10;  // Initialize value
+                 return value * 2;  // Double it
+             }
+        expect:
+          triggers:
+            - |
+                .. code-block:: javascript
+
+                   function process() {
+                       let value = 10;  // Initialize value
+          severity: suggestion
   # For 017, see the end of this file, as the content is long.
   # 019-no-google-drive-images:
   #   cases:
