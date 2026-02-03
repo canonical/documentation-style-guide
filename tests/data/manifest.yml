@@ -180,14 +180,41 @@ rules:
   #       expect:
   #         triggers:
   #         severity:
-  # 008-Headings-no-period:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  008-Headings-no-period:
+    cases:
+      - id: MD-headings
+        filetypes: [md]
+        content: |
+          # This is a heading.
+          ## Another heading!
+          ### Yet another heading?
+          #### Heading without punctuation
+        expect:
+          triggers:
+            - '.'
+            - '!'
+            - '?'
+          severity: suggestion
+      - id: RST-headings
+        filetypes: [rst]
+        content: |
+          Some heading.
+          *************
+
+          Another heading!
+          ################
+
+          Yet another heading?
+          ********************
+
+          Heading without punctuation
+          ###########################
+        expect:
+          triggers:
+            - '.'
+            - '!'
+            - '?'
+          severity: suggestion
   # 009-Headings-no-links:
   #   cases:
   #     - id: valid
