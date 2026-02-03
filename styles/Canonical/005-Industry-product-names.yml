@@ -2,7 +2,7 @@ extends: substitution
 message: "Use '%s' instead of '%s'"
 link: https://docs.ubuntu.com/styleguide/en/#other-commonly-referenced-products/projects
 ignorecase: true
-level: error
+level: warning
 scope:
   - sentence
   - list
@@ -20,7 +20,8 @@ swap:
   Mysql : 'MySQL' 
   docker : 'Docker' 
   KubeFlow : 'Kubeflow' 
-  Google cloud : 'Google Cloud Platform'
+  Google cloud platform : 'Google Cloud Platform'
+  Google cloud(?! platform) : 'Google Cloud Platform'
   Influxdb : 'InfluxDB' 
   mattermost : 'Mattermost'
   

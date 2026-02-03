@@ -7,7 +7,7 @@ scope:
   - sentence
   - table.header
   - table.cell
-level: warning
+level: suggestion
 swap:
   (?<![\-\.\,:\/*-+#]|Day )0(?![\-\.\,:\/*-+]): zero
   (?<![\-\.\,:\/*-+#]|Day )1(?![\-\.\,:\/*-+])(?! Jan(?!uary)?| Feb(?!ruary)?| Mar(?!ch)?| Apr(?!il)?| May| Jun(?:e)?| Jul(?:y)?| Aug(?:ust)?| Sep(?:tember)?| Oct(?:ober)?| Nov(?:ember)?| Dec(?:ember)?): one

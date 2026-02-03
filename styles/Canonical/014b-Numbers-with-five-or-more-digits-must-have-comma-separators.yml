@@ -8,6 +8,6 @@ scope:
   - table.header
   - table.cell
 ignorecase: true
-level: warning
+level: suggestion
 tokens:
   - ([\d]{5,})

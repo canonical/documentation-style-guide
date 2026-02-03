@@ -2,6 +2,6 @@ extends: capitalization
 # Fork of Google style guide rule
 message: "'%s' should use sentence-style capitalisation."
 link: "https://docs.ubuntu.com/styleguide/en/#sentence-case"
-level: error
+level: warning
 scope: heading
 match: $sentence

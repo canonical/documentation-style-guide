@@ -8,7 +8,7 @@ scope:
   - table.header
   - table.cell
 ignorecase: true
-level: warning
+level: suggestion
 tokens:
   - ten
   - eleven

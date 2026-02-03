@@ -108,14 +108,38 @@ rules:
             - SnapD
             - pro
           severity: error
-  # 005-Industry-product-names:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  005-Industry-product-names:
+    cases:
+      - id: valid
+        filetypes: [md, rst]
+        content: |
+            nVidia should be 'NVIDIA'
+            Openstack should be 'OpenStack'
+            Postgresql should be 'PostgreSQL'
+            Kuberentes should be 'Kubernetes' 
+            Aws should be 'AWS' 
+            Mysql should be 'MySQL' 
+            docker should be 'Docker' 
+            KubeFlow should be 'Kubeflow'
+            Google cloud platform should be 'Google Cloud Platform'
+            Google cloud should be 'Google Cloud Platform'
+            Influxdb should be 'InfluxDB' 
+            mattermost should be 'Mattermost'
+        expect:
+          triggers:
+            - nVidia
+            - Openstack
+            - Postgresql
+            - Kuberentes
+            - Aws
+            - Mysql
+            - docker
+            - KubeFlow
+            - Google cloud platform
+            - Google cloud
+            - Influxdb
+            - mattermost
+          severity: warning
   006-Contractions-forbidden:
     cases:
       - id: contractions-forbidden
