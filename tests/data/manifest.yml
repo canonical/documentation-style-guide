@@ -272,31 +272,129 @@ rules:
   #         severity:
   025a-latinisms-with-english-equivalents:
     cases:
-      - id: latin-terms
-        filetypes: [rst]
+      - id: latin-terms-with-substitutions
+        filetypes: [md, rst]
         content: |
-          This is a priori. Ergo this is also an issue.
+          This is a priori knowledge that we can use.
+          We created an ad hoc solution for the problem.
+          The loop continues ad infinitum until stopped.
+          Please refer to cf. the documentation.
+          There is a caveat to consider here.
+          The system was built circa 2020.
+          It became the de facto standard.
+          Ergo, we must take action.
+          You can use Python, Java, etc. in this course.
+          We support multiple languages, e.g. Python and Go.
+          The service is provided gratis to all users.
+          This is the core principle, i.e. the most important one.
+          The data remains in situ for processing.
+          Please note (n.b.) this important point.
+          The cost is $50 per diem.
+          The budget is $100 per capita.
+          This is not wrong per se, but could be improved.
+          She provides pro bono legal services.
+          We must add a proviso to the contract.
+          Each stanza in the configuration file defines a section.
+          We want to maintain the status quo.
+          Copy the text verbatim into the file.
+          This is Linux vs. Windows comparison.
+          The reverse is also true, vice versa.
+          We need three specific items, viz. CPU, RAM, and storage.
         expect:
           triggers:
             - a priori
+            - ad hoc
+            - ad infinitum
+            - cf
+            - caveat
+            - circa
+            - de facto
+            - etc
             - Ergo
-          severity: error
-  # 025b-latinisms-to-reconsider:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
-  # 025c-latinisms-to-avoid:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+            - e.g.
+            - gratis
+            - i.e.
+            - in situ
+            - n.b.
+            - per diem
+            - per capita
+            - per se
+            - pro bono
+            - proviso
+            - stanza
+            - status quo
+            - verbatim
+            - vs.
+            - vice versa
+            - viz.
+          severity: suggestion
+      - id: clean-text
+        filetypes: [md, rst]
+        content: |
+          This is self-evident and we can proceed.
+          We created a temporary solution for the problem.
+          For example, you can use Python or Go.
+          That is the most important principle.
+        expect:
+          triggers: []
+  025b-latinisms-to-reconsider:
+    cases:
+      - id: time-format-ampm
+        filetypes: [md, rst]
+        content: |
+          The meeting is at 3:00 PM today.
+          We start at 9:30 AM tomorrow.
+          The server restarts at 2:00 am daily.
+          Please arrive by 11:45 pm.
+          The event runs from 10 AM to 4 PM.
+          Set your alarm for 6:30am.
+        expect:
+          triggers:
+            - 3:00 PM
+            - 9:30 AM
+            - 2:00 am
+            - 11:45 pm
+            - 10 AM
+            - 4 PM
+            - 6:30am
+          severity: suggestion
+      - id: clean-time-format
+        filetypes: [md, rst]
+        content: |
+          The meeting is at 15:00 today.
+          We start at 09:30 tomorrow.
+          The server restarts at 02:00 daily.
+          The event runs from 10:00 to 16:00.
+        expect:
+          triggers: []
+  025c-latinisms-to-avoid:
+    cases:
+      - id: academic-latin-terms
+        filetypes: [md, rst]
+        content: |
+          This is based on a posteriori reasoning.
+          The argument continues ad nauseum.
+          As shown by Smith et al. in their paper.
+          The same method was used (ibid).
+          The text contains an error [sic].
+          Let the correction stet as written.
+        expect:
+          triggers:
+            - a posteriori
+            - ad nauseum
+            - et al
+            - ibid
+            - sic
+            - stet
+          severity: suggestion
+      - id: clean-academic-text
+        filetypes: [md, rst]
+        content: |
+          This is based on empirical evidence.
+          The argument continues excessively.
+          As shown by Smith and colleagues in their paper.
+        expect:
+          triggers: []
   # 400-Enforce-inclusive-terms:
   #   cases:
   #     - id: valid

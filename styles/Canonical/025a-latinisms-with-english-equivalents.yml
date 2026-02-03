@@ -1,16 +1,13 @@
+# 025 - Latinisms that have English equivalents
+
 extends: substitution
 message: "Instead of '%[2]s', use %[1]s."
 link: https://docs.ubuntu.com/styleguide/en#latin-words-and-phrases
-level: error
-scope:
-  - sentence
-  - list
-  - heading
-  - table.header
-  - table.cell
+level: suggestion
+nonword: true
 ignorecase: true
-swap: # Multiple word terms need to use "this\\sword" to match properly
-  "a\\spriori": "'self-evident', 'presupposed', 'presumed', or 'assumed'"
+swap:
+  \ba\spriori\b: "'self-evident', 'presupposed', 'presumed', or 'assumed'"
   \bad\shoc\b: "'unscheduled', 'unexpected', 'improvised', 'temporary', or 'bespoke'"
   \bad\sinfinitum\b: "'and so on', 'to the fullest extent', or 'recursively'"
   \bcf\.?\b: "'refer to'"
@@ -24,7 +21,6 @@ swap: # Multiple word terms need to use "this\\sword" to match properly
   \b(?:id\sest\b|ie\b|i\.e\.(?!\w)|i\.e(?![\.\w])): "'that is' or 'in other words'"
   \bin\ssitu\b: "'in place'"
   \b(?:nota\sbene\b|nb\b|n\.b\.(?!\w)|n\.b(?![\.\w])): "'note', 'notice', 'observe', 'pay attention to', or 'keep your eye on'"
-  \bper\b: "'each', 'every', or 'according to'"
   \bper\sdiem\b: "'every day'"
   \bper\scapita\b: "'every/each person'"
   \bper\sse\b: "'necessarily' or 'intrinsically'"
@@ -34,6 +30,5 @@ swap: # Multiple word terms need to use "this\\sword" to match properly
   \bstatus\squo\b: "'state' or 'state of things'"
   \bverbatim\b: "'exact words', 'exactly'"
   \b(?:versus|vs\.(?!\w)|vs(?![\.\w])): "'compared to/with' or 'opposed to'"
-  \bvia\b: "'through', 'with', or 'using'"
   \bvice\sversa\b: "'the reverse' or 'the other way around'"
-  \b(?:viz\.(?!\w)|viz(?![\w\.])): "'specifically' or 'namely'"
+  \b(viz\.(?!\w)|viz(?![\w\.])): "'specifically' or 'namely'"
