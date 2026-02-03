@@ -294,15 +294,15 @@ rules:
   # - Set VALE_ENFORCE_COVERAGE=1 to require every style rule appear here.
 
   # 017 is out of sequence because the content is long.
-  017-Avoid-long-code-blocks:
+  017b-Warn-code-over-35-lines:
     cases:
       - id: long-code-warning-md
         filetypes: [md]
         content: |
-          40 lines is acceptable:
+          35 lines is acceptable:
 
           ```
-          Line 01 of 40
+          Line 01 of 35
           Line 02
           Line 03
           Line 04
@@ -337,17 +337,12 @@ rules:
           Line 33
           Line 34
           Line 35
-          Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
           ```
 
-          But 41 lines is NOT acceptable:
+          But 36 lines is NOT acceptable:
 
           ```
-          Line 01 of 41
+          Line 01 of 36
           Line 02
 
           Line 04
@@ -383,11 +378,6 @@ rules:
           Line 34
           Line 35
           Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
-          Line 41
           ```
 
           This text is outside the code block.
@@ -395,7 +385,7 @@ rules:
           triggers:
             - |-  # |- because we don't want the newline at the end.
               ```
-              Line 01 of 41
+              Line 01 of 36
               Line 02
 
               Line 04
@@ -431,20 +421,15 @@ rules:
               Line 34
               Line 35
               Line 36
-              Line 37
-              Line 38
-              Line 39
-              Line 40
-              Line 41
               ```
           severity: warning
       - id: long-code-warning-md-lang
         filetypes: [md]
         content: |
-          40 lines is acceptable:
+          35 lines is acceptable:
 
           ```text
-          Line 01 of 40
+          Line 01 of 35
           Line 02
           Line 03
           Line 04
@@ -479,17 +464,12 @@ rules:
           Line 33
           Line 34
           Line 35
-          Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
           ```
 
-          But 41 lines is NOT acceptable:
+          But 36 lines is NOT acceptable:
 
           ```text
-          Line 01 of 41
+          Line 01 of 36
           Line 02
 
           Line 04
@@ -525,11 +505,6 @@ rules:
           Line 34
           Line 35
           Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
-          Line 41
           ```
 
           This text is outside the code block.
@@ -537,7 +512,7 @@ rules:
           triggers:
             - |-  # |- because we don't want the newline at the end.
               ```text
-              Line 01 of 41
+              Line 01 of 36
               Line 02
 
               Line 04
@@ -573,21 +548,16 @@ rules:
               Line 34
               Line 35
               Line 36
-              Line 37
-              Line 38
-              Line 39
-              Line 40
-              Line 41
               ```
           severity: warning
       - id: long-code-warning-myst
         filetypes: [md]
         content: |
-          40 lines is acceptable:
+          35 lines is acceptable:
 
           ```{code} text
           :foo: bar
-          Line 01 of 40
+          Line 01 of 35
           Line 02
           Line 03
           Line 04
@@ -622,18 +592,13 @@ rules:
           Line 33
           Line 34
           Line 35
-          Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
           ```
 
-          But 41 lines is NOT acceptable:
+          But 36 lines is NOT acceptable:
 
           ```{code} text
           :foo: bar
-          Line 01 of 41
+          Line 01 of 36
           Line 02
 
           Line 04
@@ -669,11 +634,6 @@ rules:
           Line 34
           Line 35
           Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
-          Line 41
           ```
 
           This text is outside the code block.
@@ -683,7 +643,7 @@ rules:
           ````{tab-set}
 
           ```{tab-item} Tab 1
-          Line 01 of 41
+          Line 01 of 36
           Line 02
           Line 03
           Line 04
@@ -719,11 +679,6 @@ rules:
           Line 34
           Line 35
           Line 36
-          Line 37
-          Line 38
-          Line 39
-          Line 40
-          Line 41
           ```
 
           ````
@@ -732,7 +687,7 @@ rules:
             - |-  # |- because we don't want the newline at the end.
               ```{code} text
               :foo: bar
-              Line 01 of 41
+              Line 01 of 36
               Line 02
 
               Line 04
@@ -768,19 +723,14 @@ rules:
               Line 34
               Line 35
               Line 36
-              Line 37
-              Line 38
-              Line 39
-              Line 40
-              Line 41
               ```
           severity: warning
       - id: long-code-warning-rst-colons
         filetypes: [rst]
         content: |
-          40 lines is acceptable::
+          35 lines is acceptable::
 
-             Line 01 of 40
+             Line 01 of 35
              Line 02
              Line 03
              Line 04
@@ -815,15 +765,10 @@ rules:
              Line 33
              Line 34
              Line 35
-             Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
 
-          But 41 lines is NOT acceptable::
+          But 36 lines is NOT acceptable::
 
-             Line 01 of 41
+             Line 01 of 36
              Line 02
 
              Line 04
@@ -859,11 +804,6 @@ rules:
              Line 34
              Line 35
              Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
-             Line 41
 
           This text is outside the code block.
         expect:
@@ -871,7 +811,7 @@ rules:
             - |
               ::
 
-                 Line 01 of 41
+                 Line 01 of 36
                  Line 02
 
                  Line 04
@@ -907,20 +847,15 @@ rules:
                  Line 34
                  Line 35
                  Line 36
-                 Line 37
-                 Line 38
-                 Line 39
-                 Line 40
-                 Line 41
           severity: warning
       - id: long-code-warning-rst-lang
         filetypes: [rst]
         content: |
-          40 lines is acceptable.
+          35 lines is acceptable.
 
           .. code:: text
 
-             Line 01 of 40
+             Line 01 of 35
              Line 02
              Line 03
              Line 04
@@ -955,17 +890,12 @@ rules:
              Line 33
              Line 34
              Line 35
-             Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
 
-          But 41 lines is NOT acceptable.
+          But 36 lines is NOT acceptable.
 
           .. code:: text
 
-             Line 01 of 41
+             Line 01 of 36
              Line 02
 
              Line 04
@@ -1001,11 +931,6 @@ rules:
              Line 34
              Line 35
              Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
-             Line 41
 
           This text is outside the code block.
         expect:
@@ -1013,7 +938,7 @@ rules:
             - |
               .. code:: text
 
-                 Line 01 of 41
+                 Line 01 of 36
                  Line 02
 
                  Line 04
@@ -1049,21 +974,16 @@ rules:
                  Line 34
                  Line 35
                  Line 36
-                 Line 37
-                 Line 38
-                 Line 39
-                 Line 40
-                 Line 41
           severity: warning
       - id: long-code-warning-rst-option
         filetypes: [rst]
         content: |
-          40 lines is acceptable.
+          35 lines is acceptable.
 
           .. code::
              :foo:
 
-             Line 01 of 40
+             Line 01 of 35
              Line 02
              Line 03
              Line 04
@@ -1098,18 +1018,13 @@ rules:
              Line 33
              Line 34
              Line 35
-             Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
 
-          But 41 lines is NOT acceptable.
+          But 36 lines is NOT acceptable.
 
           .. code::
              :foo:
 
-             Line 01 of 41
+             Line 01 of 36
              Line 02
 
              Line 04
@@ -1145,11 +1060,6 @@ rules:
              Line 34
              Line 35
              Line 36
-             Line 37
-             Line 38
-             Line 39
-             Line 40
-             Line 41
 
           This text is outside the code block.
         expect:
@@ -1158,7 +1068,7 @@ rules:
               .. code::
                  :foo:
 
-                 Line 01 of 41
+                 Line 01 of 36
                  Line 02
 
                  Line 04
@@ -1194,9 +1104,4 @@ rules:
                  Line 34
                  Line 35
                  Line 36
-                 Line 37
-                 Line 38
-                 Line 39
-                 Line 40
-                 Line 41
           severity: warning
