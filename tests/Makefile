@@ -31,6 +31,6 @@ clean:
 	@rm -rf *.egg-info .venv __pycache__ .pytest_cache .ruff_cache
 
 help:
-	@echo "Test the Vale rules                    make run"
-	@echo "Format the testing code                make format"
-	@echo "Check for errors in the testing code   make lint"
+	@echo "Test the Vale rules                     make run"
+	@echo "Format the testing code                 make format"
+	@echo "Check the quality of the testing code   make lint"

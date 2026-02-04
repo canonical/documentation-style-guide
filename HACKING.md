@@ -1,3 +1,10 @@
+In this guide:
+
+- [Guidance for maintainers of the rules](#guidance-for-maintainers-of-the-rules)
+    - [Add test cases for a rule](#add-test-cases-for-a-rule)
+    - [Run the test cases](#run-the-test-cases)
+- [Guidance for maintainers of the testing code](#guidance-for-maintainers-of-the-testing-code)
+
 # Guidance for maintainers of the rules
 
 See first: [Introduction to Vale rule development](getting-started.md)
@@ -45,10 +52,25 @@ To run the test cases for a particular rule, such as `003-Ubuntu-names-versions`
 - **If uv is not installed**
 
     ```text
-    # (provided the working dir is 'tests' and the virtual environment is active)
+    # (Provided the working dir is 'tests' and the virtual environment is active)
     pytest -vv -k 003
     ```
 
 # Guidance for maintainers of the testing code
 
-TODO
+The code in the `tests` directory uses Python with [pytest](https://docs.pytest.org/en/stable/). We require the code to be well-formatted and pass static checks.
+
+Our tools of choice are:
+
+- [ruff](https://docs.astral.sh/ruff/) for formatting and checking code conventions
+- [pyright](https://microsoft.github.io/pyright/) for checking types
+
+If you've already installed ruff, you should be able to use it in the `tests` directory with no trouble. pyright is less straightforward, as it needs to be run in a virtual environment that contains the testing code's dependencies.
+
+Instead of manually running these tools, we strongly recommend that you install [uv](https://docs.astral.sh/uv/) and use our `make` commands in the `tests` directory.
+
+| Command       | Purpose                                                       |
+|---------------|---------------------------------------------------------------|
+| `make format` | Use ruff to format the testing code                           |
+| `make lint`   | Use ruff to check code conventions and pyright to check types |
+| `make run`    | Use pytest to run the test cases for every rule               |
