@@ -2,7 +2,8 @@ In this guide:
 
 - [Guidance for maintainers of the rules](#guidance-for-maintainers-of-the-rules)
     - [Add test cases for a rule](#add-test-cases-for-a-rule)
-    - [Run the test cases](#run-the-test-cases)
+    - [Run all test cases](#run-the-test-cases)
+    - [Run selected test cases](#run-selected-test-cases)
 - [Guidance for maintainers of the testing code](#guidance-for-maintainers-of-the-testing-code)
 
 # Guidance for maintainers of the rules
@@ -13,7 +14,7 @@ See first: [Introduction to Vale rule development](getting-started.md)
 
 Make sure that the rule has suitable test cases in [tests/data/manifest.yml](tests/data/manifest.yml).
 
-## Run the test cases
+## Run all test cases
 
 We recommend that you first install [uv](https://docs.astral.sh/uv/). To install uv on Ubuntu:
 
@@ -38,6 +39,8 @@ To run the test cases for every rule:
     pip install -e .
     make run
     ```
+
+## Run selected test cases
 
 Behind the scenes, we're using [pytest](https://docs.pytest.org/en/stable/) to run each test case.
 
@@ -67,7 +70,7 @@ Our tools of choice are:
 
 If you've already installed ruff, you should be able to use it in the `tests` directory with no trouble. pyright is less straightforward, as it needs to be run in a virtual environment that contains the testing code's dependencies.
 
-Instead of manually running these tools, we strongly recommend that you install [uv](https://docs.astral.sh/uv/) and use our `make` commands in the `tests` directory.
+Instead of manually running these tools, we strongly recommend that you install [uv](https://docs.astral.sh/uv/) and use `make` in the `tests` directory.
 
 | Command       | Purpose                                                       |
 |---------------|---------------------------------------------------------------|
