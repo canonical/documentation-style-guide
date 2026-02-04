@@ -1,6 +1,6 @@
 # Guidance for maintainers of the rules
 
-See first: [Introduction to Vale rule development](getting-started.md) (TODO: needs reviewing)
+See first: [Introduction to Vale rule development](getting-started.md)
 
 ## Add test cases for a rule
 

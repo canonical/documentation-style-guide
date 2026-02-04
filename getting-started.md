@@ -6,11 +6,14 @@ The goal of this guide is to curate existing resources and provide pointers for 
 * [Install the Vale CLI tool](#install-the-vale-cli-tool)
 * [Develop a rule](#develop-a-rule)
   * [Basics](#basics)
+  * [Add test cases](#add-test-cases)
 * [Regex](#regex)
-* [Test rules](#test-rules)
+* [Manually test the rules](#manually-test-the-rules)
   * [Test all rules](#test-all-rules)
   * [Test a specific rule](#test-a-specific-rule)
+  * [Resources](#resources-3)
 * [Troubleshooting](#troubleshooting)
+  * [Conditionally ignoring rules](#conditionally-ignoring-rules)
 
 
 ## Install the Vale CLI tool
@@ -67,6 +70,10 @@ There are several other extensions, each with a particular set of keys to fine-t
 
 You can now use the [documentation](https://vale.sh/docs/topics/styles/#extension-points) to find the extension point that best suits your rule, and see what parameters it requires.
 
+### Add test cases
+
+This repo includes automated tests of the rules, which you can run locally, and which run in CI. As you develop your rule, you should add test cases that exercise your rule. See [Guidance for maintainers of the rules](HACKING.md).
+
 ### Resources
 
 * Rule examples: 
@@ -96,9 +103,12 @@ The single quotes indicate the beginning and end of the regex, and the `.*?` qua
 - [Regex editor](https://regex101.com/): Online tool that helps you compose and test your expressions. I like how it highlights capture groups in different colors.
 - Before composing a complicated regex, remember to check for [existing rules](#resources) that might have done this already. 
 
-## Test rules
+## Manually test the rules
 
-Create a file in the root directory of the repository and fill it with text that you expect your rule to catch. It can be in any text format (`.txt`, `.md`, `.rst`...)
+> [!NOTE]
+> This repo includes automated tests of the rules, which you can run locally, and which run in CI. See [Guidance for maintainers of the rules](HACKING.md).
+
+To manually test your rule, create a file in the root directory of the repository and fill it with text that you expect your rule to catch. It can be in any text format (`.txt`, `.md`, `.rst`...)
 
 Besides the text file, the `vale` command needs a `vale.ini` config file. This file already exists in the root folder `documentation-style-guide/`. Vale will automatically find the `vale.ini` if you run the command in the same directory.
 
