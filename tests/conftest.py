@@ -286,3 +286,26 @@ def assert_case():
 def manifest_schema(manifest: Manifest) -> Dict[str, Any]:
     """Provide the JSON schema for the Manifest (Draft generation by Pydantic)."""
     return manifest.model_json_schema()
+
+
+def _test_markdown(markdown_input: str):
+    vale_bin = shutil.which("vale")
+    if not vale_bin:
+        pytest.skip("'vale' binary not found on PATH; skipping test.")
+    vale_cmd = [
+        vale_bin,
+        "--config",
+        VALE_CONFIG,
+        "--ext",
+        ".md",
+    ]
+    subprocess.run(
+        vale_cmd,
+        input=markdown_input,
+        text=True,
+        check=True,
+    )
+
+@pytest.fixture
+def test_markdown():
+    return _test_markdown
