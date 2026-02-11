@@ -1352,6 +1352,95 @@ rules:
               Line 36
               ```
           severity: warning
+      - id: long-code-warning-myst-no-nl-after-option
+        filetypes: [md]
+        content: |
+          No blank line after option:
+
+          ```{code} text
+          :foo: bar
+          Line 01 of 36
+          Line 02
+
+          Line 04
+
+
+          Line 07
+          Line 08
+          Line 09
+          Line 10
+          Line 11
+          Line 12
+          Line 13
+          Line 14
+          Line 15
+          Line 16
+          Line 17
+          Line 18
+          Line 19
+          Line 20
+          Line 21
+          Line 22
+          Line 23
+          Line 24
+          Line 25
+          Line 26
+          Line 27
+          Line 28
+          Line 29
+          Line 30
+          Line 31
+          Line 32
+          Line 33
+          Line 34
+          Line 35
+          Line 36
+          ```
+
+
+        expect:
+          triggers:
+            - |-  # |- because we don't want the newline at the end.
+              ```{code} text
+              :foo: bar
+              Line 01 of 36
+              Line 02
+
+              Line 04
+
+
+              Line 07
+              Line 08
+              Line 09
+              Line 10
+              Line 11
+              Line 12
+              Line 13
+              Line 14
+              Line 15
+              Line 16
+              Line 17
+              Line 18
+              Line 19
+              Line 20
+              Line 21
+              Line 22
+              Line 23
+              Line 24
+              Line 25
+              Line 26
+              Line 27
+              Line 28
+              Line 29
+              Line 30
+              Line 31
+              Line 32
+              Line 33
+              Line 34
+              Line 35
+              Line 36
+              ```
+          severity: warning
       - id: long-code-warning-rst-colons
         filetypes: [rst]
         content: |
