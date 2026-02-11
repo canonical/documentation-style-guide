@@ -497,6 +497,7 @@ rules:
 
           ```{code} text
           :foo: bar
+
           Line 01 of 25
           Line 02
           Line 03
@@ -528,6 +529,7 @@ rules:
 
           ```{code} text
           :foo: bar
+
           Line 01 of 26
           Line 02
 
@@ -597,6 +599,7 @@ rules:
             - |-  # |- because we don't want the newline at the end.
               ```{code} text
               :foo: bar
+
               Line 01 of 26
               Line 02
 
@@ -1178,6 +1181,7 @@ rules:
 
           ```{code} text
           :foo: bar
+
           Line 01 of 35
           Line 02
           Line 03
@@ -1219,6 +1223,7 @@ rules:
 
           ```{code} text
           :foo: bar
+
           Line 01 of 36
           Line 02
 
@@ -1308,6 +1313,7 @@ rules:
             - |-  # |- because we don't want the newline at the end.
               ```{code} text
               :foo: bar
+
               Line 01 of 36
               Line 02
 
