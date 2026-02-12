@@ -14,6 +14,7 @@ def test_colon_fence_terminal(test_markdown):
         )
     )
 
+
 def test_colon_fence_code(test_markdown):
     """Case with colon-fenced `code` directive."""
 
@@ -26,6 +27,7 @@ def test_colon_fence_code(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_code_block(test_markdown):
     """Case with colon-fenced `code-block` directive."""
@@ -40,6 +42,7 @@ def test_colon_fence_code_block(test_markdown):
         )
     )
 
+
 def test_colon_fence_sourcecode(test_markdown):
     """Case with colon-fenced `sourcecode` directive."""
 
@@ -52,6 +55,7 @@ def test_colon_fence_sourcecode(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_terminal(test_markdown):
     """Case with colon-fenced `terminal` directive."""
@@ -66,6 +70,7 @@ def test_colon_fence_terminal(test_markdown):
         )
     )
 
+
 def test_colon_fence_toctree(test_markdown):
     """Case with colon-fenced `toctree` directive."""
 
@@ -78,6 +83,7 @@ def test_colon_fence_toctree(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_parameter_options(test_markdown):
     """Case with a colon-fenced literal containing space and a parameter."""
@@ -93,6 +99,7 @@ def test_colon_fence_parameter_options(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_serial(test_markdown):
     """Case with two colon-fenced literal directives separated by another block."""
@@ -113,6 +120,7 @@ def test_colon_fence_serial(test_markdown):
         )
     )
 
+
 def test_colon_fence_final_spaces(test_markdown):
     """Case with a colon-fenced literal directive with spaces after the closing
     fence."""
@@ -126,6 +134,7 @@ def test_colon_fence_final_spaces(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_special_chars(test_markdown):
     """Case with a colon-fenced literal containing all special characters."""
@@ -171,6 +180,7 @@ def test_colon_fence_special_chars(test_markdown):
         )
     )
 
+
 def test_colon_fence_colons(test_markdown):
     """Case with a colon-fenced literal directive containing unescaped colons."""
 
@@ -190,6 +200,7 @@ def test_colon_fence_colons(test_markdown):
         )
     )
 
+
 def test_colon_fence_multiple(test_markdown):
     """Case with a literal directive fenced with more than three colons."""
 
@@ -202,6 +213,7 @@ def test_colon_fence_multiple(test_markdown):
             """
         )
     )
+
 
 def test_colon_fence_nested(test_markdown):
     """Case with a colon-fenced non-literal directive containing:

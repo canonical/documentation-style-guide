@@ -313,6 +313,7 @@ def _test_markdown(markdown_input: str):
         check=True,
     )
 
+
 @pytest.fixture
 def test_markdown():
     return _test_markdown
