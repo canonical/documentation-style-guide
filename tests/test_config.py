@@ -3,7 +3,7 @@
 import textwrap
 
 
-def test_colon_fence_terminal(test_markdown):
+def test_colon_fence_arbitrary(test_markdown):
     """Case with starting fence with arbitrary directive."""
 
     test_markdown(
