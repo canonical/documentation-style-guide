@@ -1,7 +1,8 @@
 node_modules
 coverage
 build/
+*.egg-info
 .venv
 .vscode
-.pytest_cache/
+.*_cache/
 tests/__pycache__/

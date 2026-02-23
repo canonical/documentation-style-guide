@@ -1,0 +1,21 @@
+[project]
+name = "test_style_guide"
+version = "0.0.1"  # The version number isn't meaningful unless we publish the package.
+requires-python = ">=3.10"
+dependencies = [
+    "docutils",
+    "pydantic>=2.0",
+    "pytest",
+    "PyYAML",
+    "rst2html",
+    "vale==3.13.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pyright",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 99

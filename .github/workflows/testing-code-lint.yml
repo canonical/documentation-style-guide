@@ -1,0 +1,25 @@
+name: Lint the testing code
+
+on:
+  pull_request:
+    paths: [ tests/** ]
+    branches: [ main ]
+  # Allow manual trigger
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  testing-code-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Lint the testing code
+        working-directory: tests
+        run: make lint

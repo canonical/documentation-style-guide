@@ -34,7 +34,11 @@ Anyone is welcome to submit a PR to add additional rules. However, no additions 
 
 For a reference on rule syntax, see the Vale [documentation on Styles][Vale styles].
 
-If you are completely new to developing Vale rules, see this [introductory guide](https://github.com/canonical/documentation-style-guide/blob/8c7fee862b2258c692439ef430198e393bdc30c4/getting-started.md). 
+If you are completely new to developing Vale rules, see this [introductory guide](getting-started.md). 
+
+### Testing the rules
+
+This repo includes automated tests of the rules, which you can run locally, and which run in CI. See [Guidance for maintainers of the rules](HACKING.md).
 
 ### Using the rules
 
