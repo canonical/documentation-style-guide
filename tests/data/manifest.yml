@@ -750,7 +750,7 @@ rules:
               Line 26
         expect:
           triggers:
-            - |2-
+            - |2
                   Line 01 of 26
                   Line 02
                   Line 03
@@ -1503,7 +1503,7 @@ rules:
               Line 36
         expect:
           triggers:
-            - |2-
+            - |2
                   Line 01 of 36
                   Line 02
                   Line 03
