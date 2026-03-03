@@ -2050,3 +2050,25 @@ rules:
                  Line 35
                  Line 36
           severity: warning
+  026-hints-tips:
+    cases:
+      - id: valid
+        filetypes: [md, rst]
+        content: |
+          .. hint::
+              This is a reST hint.
+          .. tip::
+              This is a reST tip.
+          ```{hint}
+          This is a MyST hint.
+          ```
+          ```{tip}
+          This is a MyST tip.
+          ```
+        expect:
+          triggers:
+            - '.. hint::'
+            - '.. tip::'
+            - '```{hint}'
+            - '```{tip}'
+          severity: suggestion
