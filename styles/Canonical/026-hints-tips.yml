@@ -8,5 +8,5 @@ level: suggestion
 tokens:
   - '.. hint::'
   - '.. tip::'
-  - '```{hint}'
-  - '```{tip}'
+  - '(````*|::::*) *?{hint}'
+  - '(````*|::::*) *?{tip}'

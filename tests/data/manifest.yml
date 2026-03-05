@@ -2065,10 +2065,34 @@ rules:
           ```{tip}
           This is a MyST tip.
           ```
+          ````{hint}
+          This is a deeper MyST hint.
+          ````
+          ````{tip}
+          This is a deeper MyST tip.
+          ````
+          :::{hint}
+          This is a colon-fenced MyST hint.
+          :::
+          :::{tip}
+          This is a colon-fenced MyST tip.
+          :::
+          ::::{hint}
+          This is a deeper colon-fenced MyST hint.
+          ::::
+          ::::{tip}
+          This is a deeper colon-fenced MyST tip.
+          ::::
         expect:
           triggers:
             - '.. hint::'
             - '.. tip::'
             - '```{hint}'
             - '```{tip}'
+            - '````{hint}'
+            - '````{tip}'
+            - ':::{hint}'
+            - ':::{tip}'
+            - '::::{hint}'
+            - '::::{tip}'
           severity: suggestion
