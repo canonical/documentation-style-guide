@@ -1,6 +1,6 @@
 # Rules that are set for removal have not been included
 rules:
-  000-US-spellcheck: # No value in a clean case for spelling
+  000-US-spellcheck:
     cases:
       - id: misspell
         filetypes: [md, rst]
@@ -11,6 +11,20 @@ rules:
             - Frist
             - wrod
             - someting
+          severity: error
+      - id: ignore-rst
+        filetypes: [rst]
+        content: |
+          Ignore the :vale-ignore:`splelling` mistake.
+        expect:
+          triggers: []
+          severity: error
+      - id: ignore-md
+        filetypes: [md]
+        content: |
+          Ignore the {vale-ignore}`splelling` mistake.
+        expect:
+          triggers: []
           severity: error
   003-Ubuntu-names-versions:
     cases:
