@@ -1,7 +1,7 @@
 # 026 - Hint and tip blocks
 
 extends: existence
-message: "Avoid 'hint' and 'tip' admonitions. Use the 'admonition' directive with a description instead."
+message: "Avoid 'hint' and 'tip' admonitions. Use the 'admonition' directive with a descriptive title instead."
 scope: raw
 nonword: true
 level: suggestion
