@@ -250,7 +250,7 @@ rules:
   #         severity:
   013-Spell-out-numbers-below-10:
     cases:
-      - id: valid
+      - id: invalid
         filetypes: [md, rst]
         content: |
           0 1 2 3 4 5 6 7 8 9
@@ -267,9 +267,9 @@ rules:
             - '8'
             - '9'
           severity: suggestion
-      - id: invalid
+      - id: valid
         filetypes: [md, rst]
-        # Skip testing n*n, because two asterisks is parsed as emphasis
+        # Skip testing `n*n`, because this rule checks rendered text, and multiple asterisks parse as emphasis
         content: |
           0-0 0+0 #0 0:0 0,0 0.0 0/0
           1-1 1+1 #1 1:1 1,1 1.1 1/1 1 Jan
