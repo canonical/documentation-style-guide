@@ -308,11 +308,11 @@ sections of code. They also encourage poor explanation of the code.
 
 **DO NOT** use comments in normal bash code. E.g.:
 
-```bash
-juju deploy wordpress
-juju deploy ntp-master --to 2   #colocates with wordpress
-juju add-relation mysql wordpress
-```
+> ```bash
+> juju deploy wordpress
+> juju deploy ntp-master --to 2   #colocates with wordpress
+> juju add-relation mysql wordpress
+> ```
 
 This may be a useful comment if you just have a bash script to communicate
 information, but we have words! It is clearer, more obvious and more helpful
@@ -327,40 +327,41 @@ download instead.
 
 **DO** separate commands and output where appropriate. For example, instead of:
 
-```bash
-juju status
-environment: gce3
-machines:
-  "0":
-    agent-state: started
-    agent-version: 1.24.2
-    dns-name: 104.197.44.114
-...
-...
-```
+> ```bash
+> juju status
+> environment: gce3
+> machines:
+>   "0":
+>     agent-state: started
+>     agent-version: 1.24.2
+>     dns-name: 104.197.44.114
+> ...
+> ...
+> ```
 
 It is more informative to break between the command and the output
 with explanation. This doesn't even have to be long. It breaks up the
 code blocks somewhat and makes the whole document more legible and less
 likely to cause unintended naps. For example
 
-``` bash
-To check what is going on, run:
-
-
-      juju status
-
-... which should return some formatted information giving the current
-state of each unit and service:
-
-       environment: gce3
-       machines:
-        "0":
-          agent-state: started
-          agent-version: 1.24.2
-...
-...
-```
+> To check what is going on, run:
+>
+> ```bash
+> juju status
+> ```
+>
+> ... which should return some formatted information giving the current
+> state of each unit and service:
+>
+> ```yaml
+> environment: gce3
+> machines:
+>  "0":
+>    agent-state: started
+>    agent-version: 1.24.2
+> ...
+> ...
+> ```
 
 ### Placeholders in code blocks
 
