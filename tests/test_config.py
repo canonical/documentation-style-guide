@@ -238,3 +238,19 @@ def test_colon_fence_nested(test_markdown):
             """
         )
     )
+
+def test_role_intersphinx_links(test_markdown):
+    """Case with links to Intersphinx project:
+
+    - An external Intersphinx ref.
+    - An external Intersphinx doc."""
+
+    test_markdown(
+        textwrap.dedent(
+            """
+            {external+launchpad:ref}`test`
+
+            {external+launchpad:doc}`test`
+            """
+        )
+    )
