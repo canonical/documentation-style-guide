@@ -295,7 +295,7 @@ def manifest_schema(manifest: Manifest) -> Dict[str, Any]:
     return manifest.model_json_schema()
 
 
-def _test_markdown(markdown_input: str):
+def _test_raw(input: str, lang=".md"):
     vale_bin = shutil.which("vale")
     if not vale_bin:
         pytest.skip("'vale' binary not found on PATH; skipping test.")
@@ -304,16 +304,16 @@ def _test_markdown(markdown_input: str):
         "--config",
         VALE_CONFIG,
         "--ext",
-        ".md",
+        lang,
     ]
     subprocess.run(
         vale_cmd,
-        input=markdown_input,
+        input=input,
         text=True,
         check=True,
     )
 
 
 @pytest.fixture
-def test_markdown():
-    return _test_markdown
+def test_raw():
+    return _test_raw
