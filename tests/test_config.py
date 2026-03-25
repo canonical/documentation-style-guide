@@ -268,3 +268,20 @@ def test_md_role_intersphinx_links(test_raw):
         ),
         ".md",
     )
+
+def test_rst_role_intersphinx_links(test_raw):
+    """Case with links to Intersphinx project:
+
+    - An external Intersphinx ref.
+    - An external Intersphinx doc."""
+
+    test_raw(
+        textwrap.dedent(
+            """
+            :external+launchpad:ref:`test`
+
+            :external+launchpad:doc:`test`
+            """
+        ),
+        ".rst",
+    )
