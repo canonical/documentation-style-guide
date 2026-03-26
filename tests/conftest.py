@@ -295,7 +295,7 @@ def manifest_schema(manifest: Manifest) -> Dict[str, Any]:
     return manifest.model_json_schema()
 
 
-def _test_raw(input: str, lang=".md"):
+def _test_raw(input: str, lang: str = ".md"):
     vale_bin = shutil.which("vale")
     if not vale_bin:
         pytest.skip("'vale' binary not found on PATH; skipping test.")

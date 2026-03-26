@@ -252,6 +252,7 @@ def test_md_colon_fence_nested(test_raw):
         ".md",
     )
 
+
 def test_md_role_intersphinx_links(test_raw):
     """Case with links to Intersphinx project:
 
@@ -261,13 +262,15 @@ def test_md_role_intersphinx_links(test_raw):
     test_raw(
         textwrap.dedent(
             """
+            {external:ref}`test`
+            {external:py:class}`test`
             {external+launchpad:ref}`test`
-
             {external+launchpad:doc}`test`
             """
         ),
         ".md",
     )
+
 
 def test_rst_role_intersphinx_links(test_raw):
     """Case with links to Intersphinx project:
@@ -278,8 +281,9 @@ def test_rst_role_intersphinx_links(test_raw):
     test_raw(
         textwrap.dedent(
             """
+            :external:ref:`test`
+            :external:py:class:`test`
             :external+launchpad:ref:`test`
-
             :external+launchpad:doc:`test`
             """
         ),
