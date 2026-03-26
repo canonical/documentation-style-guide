@@ -183,9 +183,9 @@ If it is not the actual product name, it should not be capitalised. Never capita
 
 For consistency, we will use the following date format:
 
- - Single day: 1 January 2013
- - Date range within same month: 1-2 January 2013
- - Date range across two or more months: 1 January - 2 February 2013
+* Single day: January 1, 2013  
+* Date range within same month: January 1-2, 2013  
+* Date range across two or more months: January 1 \- February 2,  2013
 
 <!-- RULE
 #13 Numbers below 10 should be spelled out
