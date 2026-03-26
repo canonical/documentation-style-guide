@@ -109,40 +109,10 @@ conversational tone. However, we should keep to contractions that are commonly
 understood and not part of some regional dialect, and only use them in
 "conversational" parts of the documentation (i.e. explanatory text).
 
-### Contractions you can use
-
-| contraction | meaning           | notes                         |
-|-------------|-------------------|-------------------------------|
-|aren't       |are not            |                               |
-|can't        |cannot             |                               |
-|could've     |could have         |                               |
-|couldn't     |could not          |                               |
-|didn't       |did not            |                               |
-|doesn't      |does not           |                               |
-|don't        |do not             |                               |
-|hadn't       |had not            |                               |
-|hasn't       |has not            |                               |
-|haven't      |have not           |                               |
-|it's         |it has / it is     |                               |
-|isn't        |is not             |                               |
-|mustn't      |must not           |                               |
-|o'clock      |of the clock       |                               |
-|wasn't       | was not           |                               |
-|we'll 	      |we will            |                               |
-|we're 	      |we are             |                               |
-|we've 	      |we have            |                               |
-|won't 	      |will not           |                               |
-|would've     |would have         |                               |
-|wouldn't     |would not          |                               |
-|you'd        |you had /you would |                               |
-|you'll       |you shall /you will|                               |
-|you're       |you are            |                               |
-|you've       |you have           |                               |
-
 <!-- RULE
 #06 Forbidden contractions
 -->
-### Don't use these!
+### Forbidden contractions
 
 | contraction | meaning       | notes
 |-------------|---------------|-----------------------------------|
@@ -199,12 +169,11 @@ If it is not the actual product name, it should not be capitalised. Never capita
 -->
 ### Other considerations
 
- - Avoid overusing punctuation in headings. Headings should not end with a period/full point/full stop
- - Avoid links in headings
- - Don't overuse `code` styling in headings - it can be useful to document command references, for example, but you should always consider if it is really needed
- - Imperatives should be used for 'How to...' style docs instead of gerunds (i.e. "Create an instance" rather than "Creating an instance")
- - Do not skip levels of heading hierarchy (e.g. following an h1/# with an h3/###)
- - Headings require content and should not be followed directly by a subheading
+ - Avoid overusing punctuation in headings. Headings should not end with a period/full point/full stop.
+ - Avoid links in headings.
+ - Don't overuse `code` styling in headings - it can be useful to document command references, for example, but you should always consider if it is really needed.
+ - Do not skip levels of heading hierarchy (e.g. following an `h1` with an `h3`).
+ - Headings require content and should not be followed directly by a subheading.
 
 
 <!-- RULE
