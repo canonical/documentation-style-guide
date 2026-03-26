@@ -421,38 +421,7 @@ particular statement or paragraph of text. Typically their use is to highlight:
  - A helpful tip that will save effort/time
  - A reminder of some pre-requisite or restriction
 
-The [Vanilla framework][], which is used to publish most of our documentation,
-only allows for a particular set of pre-defined admonitions (or "Notifications"
-as they are referred to in that framework): **Information** and **Warning**.
-
-Although other systems may allow for more scope it is advised to **only use these 
-two types**, in the circumstances indicated below.
-
-### Warning
-
-The **Warning** style of admonition is appropriate where certain actions or
-lack of action could have negative consequences - for example the loss of data
-or a service interruption.
-
-![An example warning notice](https://assets.ubuntu.com/v1/3a5556d1-Screenshot%20from%202024-07-10%2015-13-18.png)
-
-
-### Information
-
-The **Information** admonition should be used for general notices which don't
-form part of the main narrative of the document, such as a useful shortcut, an
-additional source of information or a link to a related tutorial.
-
-![An example information notice](https://assets.ubuntu.com/v1/c952851c-Screenshot%20from%202024-07-10%2015-11-03.png)
-
-Note that the implementation of these admonitions relates solely to the colours and
-icons used with the notes. It is entirely possible to create an Information
-admonition and use the label 'Useful tip' or to call a Warning 'Danger of
-imminent death' to clarify the nature of the message.
-
-Overuse of admonitions diminishes their impact and disrupts the reader's
-journey, so use them sparingly and try to avoid having several in quick
-succession.
+**Try to avoid hint and tip admonitions**, as admonitions should be of higher levels or importance.
 
 ## Interacting with UI elements
 
