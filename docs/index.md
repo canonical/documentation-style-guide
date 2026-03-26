@@ -32,29 +32,6 @@ Canonical previously used UK English, but has changed to US English. There are
 many small differences between UK and US English, but for the most part it comes
 down to spelling.
 
-
-### Other common terms
-
-<!-- RULE
-#02 Spelling suggestions for common terms
--->
-
-We would like to standardise on the following spellings for common
-technology terms:
-
- - email
- - online
- - setup (noun), set up (verb)
- - backup (noun), back up (verb)
- - login (noun), log in (verb)
- - web
- - website
- - internet
- - systems management
- - virtualization
- - space-separated, comma-delimited
- - load balancer (only upper case as part of proper name e.g. Elastic Load Balancer)
-
 ## Branding
 
 Consistency in branding is important for a number of reasons, including the protection of trademarks where they apply.
@@ -120,16 +97,9 @@ Note also that when referring to releases in the general sense, it is "_**an**_ 
 
 <!-- RULE
 #05 Correct use of external product names
+Note: Removed from written guide, still retained in automation.
 -->
 
-### Other commonly referenced products/projects
-
-| Product           | Notes                         |
-|-------------------|-------------------------------|
-| NVIDIA            |                               |
-| OpenStack         |                               |
-| PostgreSQL        |                               |
-| Kubernetes        |                               |
 
 ## Contractions
 
