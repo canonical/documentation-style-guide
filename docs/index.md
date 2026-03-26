@@ -32,30 +32,6 @@ Canonical previously used UK English, but has changed to US English. There are
 many small differences between UK and US English, but for the most part it comes
 down to spelling.
 
-<!-- RULE
-#01 Spelling suggestions for English words
--->
-Some common differences are:
-
-|            UK English               |    US English                     |
-|-------------------------------------|-----------------------------------|
-|  license (verb) licence (noun)      | license (verb) license (noun)     |
-|  defence (noun)                     | defense (noun)                    |
-|  sausages, beans and mash           | sausages, beans, and mash         |
-| programme (TV, agenda) program (IT) | program (TV, agenda) program (IT) |
-|              per cent               | percent                           |
-|   sceptical                         | skeptical                         |
-|   catalogue                         | catalog                           |
-|   travelling                        |    traveling                      |
-|   labelled                          |    labeled                        |
-|  -eable                             |    -able                          |
-|  -ise                               |    -ize                           |
-|  -our                               |    -or                            |
-
-In the most part this can be mitigated by simply enabling spell checking
-on your editing software and choosing an **en-us** dictionary. The minor
-differences in grammar will (hopefully) be picked up in review by the
-documentation team.
 
 ### Other common terms
 
