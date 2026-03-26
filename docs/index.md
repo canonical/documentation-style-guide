@@ -1,12 +1,15 @@
 # Canonical Documentation Style Guide
 
-![Product logo](../media/logo.svg)
-
 This is an as yet incomplete guide to the language and style conventions used
 for Canonical documentation projects. Topics are listed in the navigation
 to the left, and presented here as a single page to aid searching.
 
+```{eval-rst}
+.. toctree::
+   :maxdepth: 2
 
+   self
+```
 ## Diátaxis
 
 Use Diátaxis to structure product documentation.
