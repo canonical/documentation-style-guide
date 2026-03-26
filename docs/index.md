@@ -440,41 +440,15 @@ Screenshots also can’t be translated, so they aren’t as accessible to non-na
 
 ### Using UI elements as the English words
 
-<!-- Rule
-#23 Don’t use UI elements as though they are English words
--->
 
-Don’t use UI elements as though they are English words.
+Use UI elements as though they are English words.
 
 For example:
 
-- **Use**: When you’re finished, click **Save** to save your settings.
-- **Don’t use**: When you’re finished, **Save** your settings.
+- **Use**: When you’re finished, **Save** your settings.
+- **Don't use**: When you’re finished, click **Save** to save your settings.
 
 Using the UI text as English words is less clear and may not transfer well to certain translated versions.
-
-### Click vs. Tap vs. Select
-
- - Use “Click” for buttons that you click on (or “Tap” if the product is primarily for mobile devices)
-- Use “Select” for selecting from multiple options (e.g., a dropdown menu, multiple menu items, etc.)
-- Use “Select” when there are multiple instructions separated by > (e.g., Select Preferences > Languages)
-
-For example:
-
-- **Use**: Click **Settings** to open your user settings.
-- **Use**: Select the machines you want to register, then click **Save**.
-- **Use**: Tap the application to open it.
-- **Don’t use**: Select **Add bookmark** to save your bookmark.
-
-“Click”/”Tap” is preferred over “Select” for UI elements that are definitive. This is because “Select” has an
-open-ended connotation, while “Click”/”Tap” is direct and definitive. Although “Click”/”Tap” may
-technically be wrong in certain situations (e.g., if a user is using the mobile version of a web page on
-their desktop computer), it’s important to consider accessibility and the primary audience of the documentation
-over these edge cases. Differentiating when users may have to *select* from
-options or *select* more than one option can be useful for them, especially when following a longer
-how-to guide (e.g., Click **X**, Click **Y**, Click **Z**, Select the settings you want to apply,
-Click **Save**). This extra level of precision can also be helpful for non-native English users and
-those using translated documentation.
 
 ### Bold vs. Italics
 
@@ -503,57 +477,6 @@ For example:
 - **Don’t use**: Navigate to the home page > Click **Packages** > Select each package you want to export > Click **Export**
 
 Using the right angled bracket (**>**) is at the author’s discretion; however, you’re encouraged to use this format where possible to keep things concise.
-
-### Checkboxes
-
-Use “Select” and ”Clear” or “Check” and ”Uncheck” together at the author’s discretion, depending on what is most natural in context.
-
-For example:
-
-- **Use**: Select the **Enable firewall** checkbox.
-- **Use**: Clear the **Add bookmark** checkbox.
-- **Use**: “Check the computer(s) you want to register” with “Uncheck any computer(s) you don’t want registered”
-- **Don’t use**: Check the computer(s) you want to register, or clear any computer(s) you don’t want registered
-
-This helps establish consistency in how we refer to checkboxes in the UI.
-
-### Keyboard shortcuts and keyboard keys
-
-Use “Press” when instructing the user to use a specific keyboard shortcut or keyboard key, and “Use” when instructing them to use collective or ambiguous keys.
-
-<!-- Rule
-#24 Don’t use "Click the 'Enter' Key" or derivations
--->
-
-
-For example:
-
-- **Use**: Press `Ctrl + C`
-- **Use**: “To save, press `Enter`.” or “To save, press the `Enter` key”.
-- **Use**: Use the arrow keys to navigate the menu.
-- **Don’t use**: Click the `Enter` key.
-
-This ensures they don’t get confused with our use of “Click”/”Tap”/”Select”.
-
-### “Icon” vs. “Button”
-
-“Icon” is for a symbol/image that represents an object or function, and “button” is for UI elements that initiate action when clicked. Icons typically don’t include explanatory text, and are sometimes buttons or included on a button.
-
-If using the image of an icon or button, write the name of the icon/button directly after it or add alt-text. Avoid using the terms “icon” or “button” unless they’re needed for clarity.
-
-For example:
-
-- A search icon (also may be a button): ![search icon](https://assets.ubuntu.com/v1/46244ff9-magnifying_glass.png)
-
-- A save button: ![save button](https://assets.ubuntu.com/v1/46eccbaa-Screenshot%20from%202024-02-14%2012-25-36.png)
-
-- A reply button with an icon: ![reply button](https://assets.ubuntu.com/v1/1370f4e1-reply_button.png)
-
-- **Use**: Click ![menu](https://assets.ubuntu.com/v1/9526cf28-menu_icon.svg) for more options. (Alt-text: “the menu”)
-
-- **Use**: Click the ![star](https://assets.ubuntu.com/v1/821178e7-icon-orange-resources.png) star to add the page to your favorites.
-
-- **Don’t use:** Click the ![pencil](https://assets.ubuntu.com/v1/633aab2b-pencil.png) pencil icon to edit the post.
 
 ## Hyperlinks
 
@@ -606,37 +529,6 @@ entire action in the sentence.
 
 - Use: `First, [download file.zip](file.zip)`
 - Avoid: `First, download the [file](file.zip)`
-
-## FAQs
-
-There are some grammatical issues that can cause confusion. Here are some of the main offenders.
-
-### What is the difference between fewer and less?
-
-Fewer means “not as many,” less means “not as much.”
-
-A commonly-quoted example used to highlight the distinction is: “There are fewer cars on the road, which means there is less traffic.”
-
-Also compare: “The fewer people know about this the better” and “The less people know about this the better”.
-
-Note: The rule does not work if the number is counted as a quantity or as a unit. For example: “She paid less than ten pounds for it” or “His last jump was less than fifteen feet”.
-
-### What is the difference between that and which?
-
-This can, and has, caused many arguments, so it's probably best not to get too worried about it. A useful guide is: that defines, which informs.
-
-This is not a cast-iron rule but it can help: “This is the house that Jack built, but I think the one next door, which Jack also built, is more attractive.”
-
-“Which” is often clausal, so is predominantly preceded by a comma - compare “The police stopped the second car that was driven by a woman.” and “The police stopped the second car, which was driven by a woman.”
-
-### Is it OK to split an infinitive?
-
-There is no grammatical rule that says you can't split an infinitive. Sometimes, it is definitely better to split:
-
-_"Can dot.com companies ever hope to fully recover their share values?"_
-
-This sounds much better than moving “fully” in front of “to recover” or behind it. The key is not to write anything that is ambiguous or inelegant.
-
 
 <!-- LINKS -->
 [Vanilla framework]: https://vanillaframework.io/docs/patterns/notification
