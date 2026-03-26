@@ -352,38 +352,8 @@ Any videos which are included should meet the same standards of accuracy, clarit
 
 <!-- RULE
 #20 Cliché words and phrases to avoid
+Note: Removed from written guide
 -->
-## Words and phrases to avoid
-
-Try to avoid jargon, long-winded phrases and words with negative
-connotations:
-
-| Avoid                | Reason                  | Substitution examples               |
-|----------------------|-------------------------|-------------------------------------|
-|Allow                 | This suggests that we are in a position of power, permitting users or customers to conduct certain activities.|                          |
-|The ability to        |                         | Use `We can` instead of `We have the ability to`                        |
-|Is able to            |                         | Use `Ubuntu can` instead of `Ubuntu is able to` |
-|Not only...but also...|                         |                               |
-|Eliminate             |                         | `Remove`, `destroy`           |
-|Execute               |                         |                               |
-|Terminate             |                         | `Stop`, `destroy`             |
-|Kill                  |                         | `Stop`, `destroy`             |
-|Disruptive            |                         |                               |
-|Explosive             |                         | `Major`, `significant`, `high impact`|
-|Leverage              |                         |                               |
-|Ecosystem             |                         |                               |
-|Going forward         |                         |                               |
-|In order to           |                         | `To`                          |
-|Form factor           |                         |                               |
-|Use case              |                         |                               |
-|End user              |                         | `User`                        |
-|Linux for human beings|                         |                               |
-|Thing                 |                         |                               |
-|Next level            |                         |                               |
-|Harness               |                         |                               |
-
-It can be tempting to use flowery, official-sounding words
-rather than plain English. Try to keep it simple.
 
 <!-- RULE
 #25 Latinisms to avoid
