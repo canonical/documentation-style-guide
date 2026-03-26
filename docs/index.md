@@ -220,9 +220,8 @@ When writing out numbers over the 100s, remember to include commas.
 -->
 ## Code examples in documentation
 
-**DO NOT** use prompt marks (e.g. `$` or `#`) in code samples. These cause problems
-for users who sometimes mistakenly type them in, or who want to copy and paste
-sections of code. They also encourage poor explanation of the code.
+Use prompt marks (e.g. `$` or `#`) in code samples **must** allow users to copy
+the code. Otherwise prompt marks cause problems for users.
 
 **DO NOT** use comments in normal bash code. E.g.:
 
@@ -260,7 +259,7 @@ machines:
 It is more informative to break between the command and the output
 with explanation. This doesn't even have to be long. It breaks up the
 code blocks somewhat and makes the whole document more legible and less
-likely to cause unintended naps. For example
+likely to cause unintended gaps. For example:
 
 ``` bash
 To check what is going on, run:
