@@ -1,15 +1,16 @@
-# Canonical Documentation Style Guide
+# Documentation Style Guide
 
-This is an as yet incomplete guide to the language and style conventions used
-for Canonical documentation projects. Topics are listed in the navigation
-to the left, and presented here as a single page to aid searching.
+This is a minimal guide to the language and style conventions used
+for Canonical documentation projects.
 
 ```{eval-rst}
 .. toctree::
    :maxdepth: 2
 
    self
+
 ```
+
 ## Diátaxis
 
 Use Diátaxis to structure product documentation.
@@ -529,6 +530,22 @@ entire action in the sentence.
 
 - Use: `First, [download file.zip](file.zip)`
 - Avoid: `First, download the [file](file.zip)`
+
+## Lists
+
+Use numbered lists sparingly, and ensure that bulleted lists are definitive lists, not examples or subsets of a category.
+
+Numbered lists should be used only when:
+
+- The order of items matters (e.g., step-by-step instructions)
+- You need to reference specific items by number
+- You're describing a process or sequence
+
+Bulleted lists are preferred for most other situations because they're easier to scan
+and don't imply a hierarchy or sequence that may not exist. Overusing numbered lists
+can make documentation feel unnecessarily rigid and make it harder to maintain,
+especially when items need to be added or removed.
+
 
 <!-- LINKS -->
 [Vanilla framework]: https://vanillaframework.io/docs/patterns/notification
