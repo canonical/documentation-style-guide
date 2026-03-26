@@ -176,9 +176,30 @@ If it is not the actual product name, it should not be capitalised. Never capita
  - Do not skip levels of heading hierarchy (e.g. following an `h1` with an `h3`).
  - Headings require content and should not be followed directly by a subheading.
 
-
 <!-- RULE
 #12 Dates should follow '1 January 1970' format
+
+# Does not apply stated style guide rule.
+# TODO: Fix
+
+# extends: existence
+# message: Use the '1 January 1970' format instead of '%s'
+# link: https://docs.ubuntu.com/styleguide/en/#dates
+# scope: paragraph
+# ignorecase: true
+# level: warning
+# tokens:
+#   # day-month-year
+#   - (0?[1-9]|[12]\d|30|31)[^\w\d\r\n:]{1,2}(0?[1-9]|1[0-2])[^\w\d\r\n:]{1,2}(\d{4}|\d{2})
+#   # month-day-year
+#   - (0?[1-9]|1[0-2])[^\w\d\r\n:]{1,2}(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:]{1,2}(\d{4}|\d{2})
+#   # year-month-day
+#   - (\d{4}|\d{2})[^\w\d\r\n:]{1,2}(0?[1-9]|1[0-2])[^\w\d\r\n:]{1,2}(0?[1-9]|[12]\d|30|31)
+#   # "1st of January 1970"
+#   - \d{1,2}(st|nd|rd|th) of (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)|May|Jun(?:e)|Jul(?:y)|Aug(?:ust)|Sep(?:tember)?|Oct(?:ober)|Nov(?:ember)?|Dec(?:ember)?) \d{4}
+#   # "January 1st, 1970"
+#   - (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)|May|Jun(?:e)|Jul(?:y)|Aug(?:ust)|Sep(?:tember)?|Oct(?:ober)|Nov(?:ember)?|Dec(?:ember)?) \d{1,2}(st|nd|rd|th)(,|) \d{4}
+
 -->
 ## Dates
 
