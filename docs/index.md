@@ -413,24 +413,8 @@ Lastly, these Latin words and phrases are widespread in academia and research. T
 
 <!-- RULE
 #26 Avoid orphan demonstrative pronouns
+Note: removed from written guide
 -->
-
-## Lone "this", "these", "those", "that"
-
-The familiar words "this", "these", "those" and "that" serve to refer back to something previously discussed and are called _demonstrative pronouns_. They can work both on their own ("That's great!") and paired with the thing they refer to ("This apple is sweet.").
-
-When there's no chance for ambiguity, an isolated demonstrative pronoun can flow nicely:
-
-- Create two new instances. These will operate as your client and server.
-
-There's no doubt here that "these" refers to the instances.
-
-However, if there's a significant distance between a pronoun and the thing it refers to, or the previous sentence contains multiple ideas, the reader may confuse the meaning. If there's a risk of ambiguity, put the target noun immediately after the demonstrative pronoun:
-
-- **Use**: The `yaml` object is sourced from the `yamllib` library. This object is only available if...
-- **Don't use**: The `yaml` object is sourced from the `yamllib` library. This is only available if...
-
-In the improved sentence, inserting "object" after "this" makes it clear we're referring to the object and not the library.
 
 
 <!-- RULE
