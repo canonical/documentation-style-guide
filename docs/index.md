@@ -427,7 +427,7 @@ particular statement or paragraph of text. Typically their use is to highlight:
 
 ### Screenshots
 
-Screenshots should be used sparingly.
+Do not use screenshots unless there is no better way to better indicate the interaction or interface you are documenting.
 
 A screenshot is not a replacement for clear descriptions in documentation. If an image is well described,
 a screenshot shouldn’t be necessary in many situations, and including many screenshots can clutter the
