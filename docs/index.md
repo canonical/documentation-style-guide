@@ -333,7 +333,8 @@ An image should not be overly cropped - allow for context.
 #19 No images linked to Google drive
 -->
 **DO NOT LINK IMAGES FROM A GOOGLE DRIVE**
-This will work, until such a time as whoever owns the image closes their account (or leaves Canonical).
+This will only work temporarily. Google Drive can rotate URLs and when a user
+leaves or closes their account the asset will be unavailable.
 
 ## Video
 
