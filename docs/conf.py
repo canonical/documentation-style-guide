@@ -354,4 +354,4 @@ rst_prolog = """
     :class: vale-ignore
 """
 
-
+sitemap_filename = "doc-sitemap.xml"
