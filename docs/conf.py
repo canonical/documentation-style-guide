@@ -179,7 +179,7 @@ slug = 'documentation-style-guide/docs'
 
 # Use RTD canonical URL to ensure duplicate pages have a specific canonical URL
 
-html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
+html_baseurl = "https://canonical.com/documentation-style-guide/docs/"
 
 # sphinx-sitemap uses html_baseurl to generate the full URL for each page:
 

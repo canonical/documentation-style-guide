@@ -1,7 +1,7 @@
 // overwrite links.js
 
 // Replace oldDomain with newDomain
-const oldDomain = 'documentation.ubuntu.com/style-guide/';
+const oldDomain = 'canonical-migrate-doc-style-guide.readthedocs-hosted.com/';
 const newDomain = 'canonical.com/documentation-style-guide/docs/';
 
 // // Logging for debugging purposes
