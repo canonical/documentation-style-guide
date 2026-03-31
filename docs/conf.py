@@ -70,7 +70,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = "https://canonical-documentation-style-guide.readthedocs-hosted.com/"
+ogp_site_url = "https://canonical.com/documentation-style-guide/docs"
 
 
 # Preview name of the documentation website
@@ -106,7 +106,7 @@ html_context = {
     # TODO: If there's no such website,
     #       remove the {{ product_page }} link from the page header template
     #       (usually .sphinx/_templates/header.html; also, see README.rst).
-    "product_page": "documentation.ubuntu.com",
+    "product_page": "canonical.com/documentation-style-guide/docs",
     # Product tag image; the orange part of your logo, shown in the page header
     #
     # TODO: To add a tag image, uncomment and update as needed.
@@ -171,7 +171,7 @@ html_extra_path = []
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
 #       uncomment and update as needed.
 
-# slug = ''
+slug = 'documentation-style-guide/docs'
 
 #######################
 # Sitemap configuration: https://sphinx-sitemap.readthedocs.io/
@@ -204,7 +204,7 @@ sitemap_excludes = [
 # Template and asset locations #
 ################################
 
-# html_static_path = ["_static"]
+html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 
@@ -307,9 +307,9 @@ exclude_patterns = [
 
 # Adds custom JavaScript files, located under 'html_static_path'
 
-# html_js_files = [
-#     "https://assets.ubuntu.com/v1/287a5e8f-bundle.js",
-# ]
+html_js_files = [
+    "js/url_overwrite.js",
+]
 
 
 # Specifies a reST snippet to be appended to each .rst file
