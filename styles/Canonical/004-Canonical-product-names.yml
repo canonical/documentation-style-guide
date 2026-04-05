@@ -31,7 +31,8 @@ swap:
   Snapcraft: Snapcraft
   snapd: snapd # Vale seems to allow normal capitalisation, may need specific existence rule for Snapd
   Ubuntu Core: Ubuntu Core
-  (?<=Ubuntu )Pro: Pro
+  # \b ensures only "Ubuntu Pro" matches, not "Ubuntu project", "Ubuntu provides", etc.
+  (?<=Ubuntu )Pro\b: Pro
   Ubuntu Server: Ubuntu Server
 
 # Not working with multi-word terms that have the first word in the accept list

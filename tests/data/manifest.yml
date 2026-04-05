@@ -60,6 +60,8 @@ rules:
           Ubuntu 24.04 LTS
           Ubuntu 24.04 LTS (Noble)
           Ubuntu 24.04 LTS (Noble Numbat)
+          Ubuntu 24.04.4 LTS
+          Ubuntu 24.04.4 LTS (Noble Numbat)
 
           ## Ubuntu 24.04 LTS
 
@@ -120,6 +122,18 @@ rules:
             - snapcraft
             - snapD
             - SnapD
+            - pro
+          severity: error
+      - id: ubuntu-pro-not-flagged
+        filetypes: [md, rst]
+        content: |
+          The Ubuntu project is open source.
+          Ubuntu provides a range of tools.
+          Ubuntu proposed-migration is a process.
+          See the Ubuntu Pro page for subscription info.
+          Ubuntu pro is a product.
+        expect:
+          triggers:
             - pro
           severity: error
   005-Industry-product-names:

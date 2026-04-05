@@ -16,8 +16,9 @@ scope:
 level: error
 tokens:
   # LTS releases should be followed by "LTS" suffix.
-  - 'Ubuntu \d?[02468]\.04(?! LTS)'
-  - 'Ubuntu 6\.06(?! LTS)'
+  # Use (?!\.\d| LTS) so point releases like "Ubuntu 24.04.4 LTS" are not flagged.
+  - 'Ubuntu \d?[02468]\.04(?!\.\d| LTS)'
+  - 'Ubuntu 6\.06(?!\.\d| LTS)'
   # Non-LTS releases should not be followed by "LTS" suffix.
   - 'Ubuntu \d?\d\.10 LTS'
   - 'Ubuntu \d?[13579]\.04 LTS'
