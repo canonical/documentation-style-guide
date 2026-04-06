@@ -6,6 +6,7 @@ for Canonical documentation projects.
 ```{eval-rst}
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    self
 
@@ -44,8 +45,8 @@ When we refer to Ubuntu |oǒ'boǒntoō|, we are usually referring to the distrib
 
 Our convention is to use the name, followed by the release number and, if applicable, 'LTS' to denote that the version
 is in Long Term Support. Optionally, you may also further identify the release by its codename (the first or both parts
-of the release name) if this is likely to be useful (e.g. some of our products also use the release names to identify
-versions).
+of the release name) if this is likely to be useful For example, some of our products also use the release names to identify
+versions.
 
 <!-- RULE
 #03 Correct use of Ubuntu versions
@@ -58,9 +59,7 @@ Some examples of correct usage:
 - **Ubuntu 23.10 (Mantic)**
 - **Ubuntu 24.04 LTS (Noble Numbat)**
 
-This also follows on to more specific products, e.g.
-
-**Ubuntu Server 22.04 LTS**
+This also applies to more specific products, such as **Ubuntu Server 22.04 LTS**.
 
 In cases where the release may be mentioned many times in a single document, it is up to the author's judgement whether this
 could be reworded or replaced by simply 'Ubuntu' on subsequent mentions.
@@ -108,7 +107,7 @@ Contractions are very common in spoken English and in many types of writing.
 Avoiding the use of them entirely makes it difficult to achieve a friendly,
 conversational tone. However, we should keep to contractions that are commonly
 understood and not part of some regional dialect, and only use them in
-"conversational" parts of the documentation (i.e. explanatory text).
+"conversational" parts of the documentation such as explanatory text.
 
 <!-- RULE
 #06 Forbidden contractions
@@ -173,7 +172,7 @@ If it is not the actual product name, it should not be capitalised. Never capita
  - Avoid overusing punctuation in headings. Headings should not end with a period/full point/full stop.
  - Avoid links in headings.
  - Don't overuse `code` styling in headings - it can be useful to document command references, for example, but you should always consider if it is really needed.
- - Do not skip levels of heading hierarchy (e.g. following an `h1` with an `h3`).
+ - Do not skip levels of heading hierarchy. For example, do not follow an `h1` with an `h3`.
  - Headings require content and should not be followed directly by a subheading.
 
 <!-- RULE
@@ -218,7 +217,7 @@ For consistency, we will use the following date format:
 ## Numbers
 
 Numbers in single figures should be spelled out in most cases. From
-10 onwards, numbers should be written in digits.
+10 onward, numbers should be written in digits.
 
 Exceptions to this rule include numbered lists and units of measurement.
 
@@ -242,10 +241,10 @@ When writing out numbers over the 100s, remember to include commas.
 -->
 ## Code examples in documentation
 
-Use prompt marks (e.g. `$` or `#`) in code samples **must** allow users to copy
+Use of prompt marks such as `$` and `#` in code samples **must** allow users to copy
 the code. Otherwise prompt marks cause problems for users.
 
-**DO NOT** use comments in normal bash code. E.g.:
+**DO NOT** use comments in normal bash code. For example:
 
 ```bash
 juju deploy wordpress
@@ -355,7 +354,7 @@ An image should not be overly cropped - allow for context.
 #19 No images linked to Google drive
 -->
 **DO NOT LINK IMAGES FROM A GOOGLE DRIVE**
-This will only work temporarily. Google Drive can rotate URLs and when a user
+This is not accessible for external contributors. Also, this will only work temporarily. Google Drive can rotate URLs and when a user
 leaves or closes their account the asset will be unavailable.
 
 ## Video
@@ -470,7 +469,6 @@ For example:
 - **Use**: When you’re finished, **Save** your settings.
 - **Don't use**: When you’re finished, click **Save** to save your settings.
 
-Using the UI text as English words is less clear and may not transfer well to certain translated versions.
 
 ### Bold vs. Italics
 
@@ -558,7 +556,7 @@ Use numbered lists sparingly, and ensure that bulleted lists are definitive list
 
 Numbered lists should be used only when:
 
-- The order of items matters (e.g., step-by-step instructions)
+- The order of items matters, such as in step-by-step instructions
 - You need to reference specific items by number
 - You're describing a process or sequence
 
