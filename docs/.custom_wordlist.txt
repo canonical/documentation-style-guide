@@ -20,3 +20,4 @@ postiori
 priori
 se
 situ
+asciinema

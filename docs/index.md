@@ -100,7 +100,6 @@ Note also that when referring to releases in the general sense, it is "_**an**_ 
 Note: Removed from written guide, still retained in automation.
 -->
 
-
 ## Contractions
 
 Contractions are very common in spoken English and in many types of writing.
@@ -112,7 +111,10 @@ understood and not part of some regional dialect, and only use them in
 <!-- RULE
 #06 Forbidden contractions
 -->
+
 ### Forbidden contractions
+
+<!-- vale Canonical.000-US-spellcheck = NO -->
 
 | contraction | meaning       | notes
 |-------------|---------------|-----------------------------------|
@@ -129,6 +131,8 @@ understood and not part of some regional dialect, and only use them in
 |gonna 	      |going to       |                                   |
 |gotta 	      |got to         |                                   |
 
+<!-- vale Canonical.000-US-spellcheck = YES -->
+
 ## Headings
 
 Headings are important for navigation, for setting tone and for search indexing. Please bear
@@ -137,6 +141,7 @@ in mind the following:
 <!-- RULE
 #07 Use sentence case in headings
 -->
+
 ### Sentence case
 
 All headings and headlines should be sentence case. This means that you
@@ -167,6 +172,7 @@ If it is not the actual product name, it should not be capitalised. Never capita
 <!-- RULE
 #11 Headings should not be followed by a subheading
 -->
+
 ### Other considerations
 
  - Avoid overusing punctuation in headings. Headings should not end with a period/full point/full stop.
@@ -200,6 +206,7 @@ If it is not the actual product name, it should not be capitalised. Never capita
 #   - (?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)|May|Jun(?:e)|Jul(?:y)|Aug(?:ust)|Sep(?:tember)?|Oct(?:ober)|Nov(?:ember)?|Dec(?:ember)?) \d{1,2}(st|nd|rd|th)(,|) \d{4}
 
 -->
+
 ## Dates
 
 For consistency, we will use the following date format:
@@ -214,6 +221,7 @@ For consistency, we will use the following date format:
 <!-- RULE
 #14 Numbers above 9 should be written in the '1,970' format
 -->
+
 ## Numbers
 
 Numbers in single figures should be spelled out in most cases. From
@@ -239,6 +247,7 @@ When writing out numbers over the 100s, remember to include commas.
 <!-- RULE
 #18 Separate input and output code blocks
 -->
+
 ## Code examples in documentation
 
 Use of prompt marks such as `$` and `#` in code samples **must** allow users to copy
@@ -377,14 +386,16 @@ Note: Removed from written guide
 -->
 
 <!-- RULE
-#25 Latinisms to avoid
+#25 Latin words to avoid
 -->
 
 ## Latin words and phrases
 
-Latinisms make documents less approachable to an international audience, and we can't assume our reader is familiar with them. They disregard the principle of plain English, and, worse, are often misunderstood or misused by both readers and writers.
+Latin words and phrases make documents less approachable to an international audience, and we can't assume our reader is familiar with them. They disregard the principle of plain English, and, worse, are often misunderstood or misused by both readers and writers.
 
 Instead of reaching for a Latin phrase, choose among several English equivalents:
+
+<!-- vale Canonical.000-US-spellcheck = NO -->
 
 Instead of... | Use...
 --------------|-------
@@ -414,6 +425,8 @@ versus<br>vs. | compared to/with<br>opposed to
 via | through<br>with<br>using
 vice versa | the reverse<br>the other way around
 viz. | specifically<br>namely
+
+<!-- vale Canonical.000-US-spellcheck = NO -->
 
 The following Latin words and phrases are firmly embedded in everyday English, but you can still improve a document's readability by avoiding them:
 
@@ -461,14 +474,12 @@ Screenshots also can’t be translated, so they aren’t as accessible to non-na
 
 ### Using UI elements as the English words
 
-
 Use UI elements as though they are English words.
 
 For example:
 
 - **Use**: When you’re finished, **Save** your settings.
 - **Don't use**: When you’re finished, click **Save** to save your settings.
-
 
 ### Bold vs. Italics
 
@@ -564,7 +575,6 @@ Bulleted lists are preferred for most other situations because they're easier to
 and don't imply a hierarchy or sequence that may not exist. Overusing numbered lists
 can make documentation feel unnecessarily rigid and make it harder to maintain,
 especially when items need to be added or removed.
-
 
 <!-- LINKS -->
 [Vanilla framework]: https://vanillaframework.io/docs/patterns/notification
