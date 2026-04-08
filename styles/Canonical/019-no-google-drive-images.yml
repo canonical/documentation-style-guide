@@ -1,7 +1,7 @@
 # 19 - No Google Drive links
 
 extends: existence
-message: "Don't use images from Google Drive. Use the asset manager."
+message: "Don't use images from Google Drive or the asset manager. Store images in the repository."
 scope: raw
 nonword: true
 level: error
