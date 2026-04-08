@@ -309,6 +309,10 @@ state of each unit and service:
 ...
 ```
 
+```{note}
+For Canonical documentation, you may want to use the [sphinx-terminal](https://github.com/canonical/sphinx-terminal) extension, which natively separates code input and output.
+```
+
 ### Placeholders in code blocks
 
 There are many situations where it's necessary for users to provide their own
