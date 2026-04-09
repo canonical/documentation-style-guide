@@ -11,10 +11,10 @@ ignorecase: true
 level: suggestion
 tokens:
   # Markdown inline links: [... bad text ...](url)
-  - '\[[^\]]*\b(?:click here|this (?:link|page|document|article)|read more|learn more|more info(?:rmation)?|here|these|this|more|link)\b[^\]]*\]\([^\)]+\)'
+  - '\[[^\]]*\b(?:here|these|this|more|link)\b[^\]]*\]\([^\)]+\)'
   # RST external links: `... bad text ... <url>`_
-  - '`[^`<]*\b(?:click here|this (?:link|page|document|article)|read more|learn more|more info(?:rmation)?|here|these|this|more|link)\b[^`<]*<[^>]+>`_'
+  - '`[^`<]*\b(?:here|these|this|more|link)\b[^`<]*<[^>]+>`_'
   # Sphinx/RST cross-reference roles: :role:`... bad text ...` or :role:`... bad text ... <target>`
-  - ':(?:doc|ref|any|download):`[^`]*\b(?:click here|this (?:link|page|document|article)|read more|learn more|more info(?:rmation)?|here|these|this|more|link)\b[^`]*`'
+  - ':(?:doc|ref|any|download):`[^`]*\b(?:here|these|this|more|link)\b[^`]*`'
   # MyST cross-reference roles: {role}`... bad text ...` or {role}`... bad text ... <target>`
-  - '\{(?:doc|ref|any|download)\}`[^`]*\b(?:click here|this (?:link|page|document|article)|read more|learn more|more info(?:rmation)?|here|these|this|more|link)\b[^`]*`' 
+  - '\{(?:doc|ref|any|download)\}`[^`]*\b(?:here|these|this|more|link)\b[^`]*`' 
