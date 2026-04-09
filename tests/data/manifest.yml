@@ -646,7 +646,7 @@ rules:
             - '{any}`these <something>`'
             - '{download}`this <file.tar.gz>`'
             - '{ref}`try this <label>`'
-          severity: suggestion
+          severity: warning
       - id: bad-link-text-rst
         filetypes: [rst]
         content: |
@@ -688,7 +688,7 @@ rules:
             - ':any:`learn more <target>`'
             - ':download:`this <file.tar.gz>`'
             - ':ref:`try this <label>`'
-          severity: suggestion
+          severity: warning
       - id: clean-link-text
         filetypes: [md, rst]
         content: |
