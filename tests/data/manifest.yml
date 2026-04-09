@@ -2138,3 +2138,101 @@ rules:
             - '::::{hint}'
             - '::::{tip}'
           severity: suggestion
+  027-bad-descriptive-links:
+    cases:
+      - id: bad-link-text-md
+        filetypes: [md]
+        content: |
+          See [here](https://example.com) for details.
+          Go to [click here](https://example.com) to learn.
+          Read [this](https://example.com/doc) for more.
+          Check [these](https://example.com/list) items.
+          For details, [read more](https://example.com).
+          To get started, [learn more](https://example.com).
+          See [more](https://example.com) about the topic.
+          Follow this [link](https://example.com).
+          Visit [this link](https://example.com) for help.
+          See [this page](https://example.com) for info.
+          Read [this document](https://example.com) now.
+          See [this article](https://example.com/blog) too.
+          See [more information](https://example.com) below.
+          See [more info](https://example.com/faq) here.
+          See {doc}`here <target>` for details.
+          See {ref}`this <label>` for setup.
+          See {any}`these <something>` for examples.
+          Get {download}`this <file.tar.gz>` archive.
+        expect:
+          triggers:
+            - '[here](https://example.com)'
+            - '[click here](https://example.com)'
+            - '[this](https://example.com/doc)'
+            - '[these](https://example.com/list)'
+            - '[read more](https://example.com)'
+            - '[learn more](https://example.com)'
+            - '[more](https://example.com)'
+            - '[link](https://example.com)'
+            - '[this link](https://example.com)'
+            - '[this page](https://example.com)'
+            - '[this document](https://example.com)'
+            - '[this article](https://example.com/blog)'
+            - '[more information](https://example.com)'
+            - '[more info](https://example.com/faq)'
+            - '{doc}`here <target>`'
+            - '{ref}`this <label>`'
+            - '{any}`these <something>`'
+            - '{download}`this <file.tar.gz>`'
+          severity: suggestion
+      - id: bad-link-text-rst
+        filetypes: [rst]
+        content: |
+          See `here <https://example.com>`_ for details.
+          Go to `click here <https://example.com>`_ to learn.
+          Read `this <https://example.com>`_ for more.
+          See `these <https://example.com>`_ items.
+          For more, `read more <https://example.com>`_.
+          See `learn more <https://example.com>`_ to begin.
+          See `more <https://example.com>`_ about it.
+          Follow this `link <https://example.com>`_.
+          See `this page <https://example.com>`_ for info.
+          See :doc:`here <target>` for the guide.
+          See :ref:`this <label>` for setup.
+          See :ref:`these <label>` for examples.
+          See :doc:`read more <target>` for details.
+          See :any:`learn more <target>` too.
+          Get :download:`this <file.tar.gz>` archive.
+        expect:
+          triggers:
+            - '`here <https://example.com>`_'
+            - '`click here <https://example.com>`_'
+            - '`this <https://example.com>`_'
+            - '`these <https://example.com>`_'
+            - '`read more <https://example.com>`_'
+            - '`learn more <https://example.com>`_'
+            - '`more <https://example.com>`_'
+            - '`link <https://example.com>`_'
+            - '`this page <https://example.com>`_'
+            - ':doc:`here <target>`'
+            - ':ref:`this <label>`'
+            - ':ref:`these <label>`'
+            - ':doc:`read more <target>`'
+            - ':any:`learn more <target>`'
+            - ':download:`this <file.tar.gz>`'
+          severity: suggestion
+      - id: clean-link-text
+        filetypes: [md, rst]
+        content: |
+          See [the installation guide](https://example.com/install) for details.
+          Read [Ubuntu documentation](https://example.com/docs) for more.
+          Follow the [getting started tutorial](https://example.com/start).
+          Download [the latest release](https://example.com/releases).
+          Visit `Ubuntu documentation <https://example.com>`_ for help.
+          See `the contributor guide <https://example.com>`_ for details.
+          See :doc:`security overview <security>` for details.
+          See :ref:`configuration options <config-opts>` for help.
+          See {ref}`configuration options <config-opts>` for help.
+          See {doc}`security overview <security>` for details.
+          You can find more information about this here in the prose.
+          Use this command to install these packages.
+        expect:
+          triggers: []
+          severity: suggestion
