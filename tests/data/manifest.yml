@@ -2157,10 +2157,14 @@ rules:
           See [this article](https://example.com/blog) too.
           See [more information](https://example.com) below.
           See [more info](https://example.com/faq) here.
+          Try [clicking here](https://example.com/try) for setup.
+          See [the link to docs](https://example.com/docs) now.
+          See [see more details](https://example.com/info) below.
           See {doc}`here <target>` for details.
           See {ref}`this <label>` for setup.
           See {any}`these <something>` for examples.
           Get {download}`this <file.tar.gz>` archive.
+          See {ref}`try this <label>` for more.
         expect:
           triggers:
             - '[here](https://example.com)'
@@ -2177,10 +2181,14 @@ rules:
             - '[this article](https://example.com/blog)'
             - '[more information](https://example.com)'
             - '[more info](https://example.com/faq)'
+            - '[clicking here](https://example.com/try)'
+            - '[the link to docs](https://example.com/docs)'
+            - '[see more details](https://example.com/info)'
             - '{doc}`here <target>`'
             - '{ref}`this <label>`'
             - '{any}`these <something>`'
             - '{download}`this <file.tar.gz>`'
+            - '{ref}`try this <label>`'
           severity: suggestion
       - id: bad-link-text-rst
         filetypes: [rst]
@@ -2194,12 +2202,15 @@ rules:
           See `more <https://example.com>`_ about it.
           Follow this `link <https://example.com>`_.
           See `this page <https://example.com>`_ for info.
+          Try `clicking here <https://example.com>`_ for setup.
+          See `the link to docs <https://example.com>`_ now.
           See :doc:`here <target>` for the guide.
           See :ref:`this <label>` for setup.
           See :ref:`these <label>` for examples.
           See :doc:`read more <target>` for details.
           See :any:`learn more <target>` too.
           Get :download:`this <file.tar.gz>` archive.
+          See :ref:`try this <label>` for more.
         expect:
           triggers:
             - '`here <https://example.com>`_'
@@ -2211,12 +2222,15 @@ rules:
             - '`more <https://example.com>`_'
             - '`link <https://example.com>`_'
             - '`this page <https://example.com>`_'
+            - '`clicking here <https://example.com>`_'
+            - '`the link to docs <https://example.com>`_'
             - ':doc:`here <target>`'
             - ':ref:`this <label>`'
             - ':ref:`these <label>`'
             - ':doc:`read more <target>`'
             - ':any:`learn more <target>`'
             - ':download:`this <file.tar.gz>`'
+            - ':ref:`try this <label>`'
           severity: suggestion
       - id: clean-link-text
         filetypes: [md, rst]
@@ -2233,6 +2247,10 @@ rules:
           See {doc}`security overview <security>` for details.
           You can find more information about this here in the prose.
           Use this command to install these packages.
+          See [the linked resources](https://example.com/resources) page.
+          Visit `linked resources <https://example.com>`_ for help.
+          See :doc:`furthermore <target>` for details.
+          See {ref}`linking guide <label>` for help.
         expect:
           triggers: []
           severity: suggestion
