@@ -595,7 +595,7 @@ rules:
             - '::::{hint}'
             - '::::{tip}'
           severity: suggestion
-  027-bad-descriptive-links:
+  027-non-descriptive-link-text:
     cases:
       - id: bad-link-text-md
         filetypes: [md]

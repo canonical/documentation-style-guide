@@ -1,4 +1,4 @@
-# 027 - Flag bad descriptive links
+# 027 - Flag non-descriptive link text
 
 # Copilot assisted.
 
@@ -8,7 +8,7 @@ link: https://docs.ubuntu.com/styleguide/en
 scope: raw
 nonword: true
 ignorecase: true
-level: suggestion
+level: warning
 tokens:
   # Markdown inline links: [... bad text ...](url)
   - '\[[^\]]*\b(?:here|these|this|more|link)\b[^\]]*\]\([^\)]+\)'
