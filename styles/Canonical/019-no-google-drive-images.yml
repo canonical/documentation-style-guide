@@ -12,4 +12,7 @@ tokens:
   - '{figure}[\w\.:\/\-=? "]+(drive.google|drive.usercontent.google)[\w\.:\/\-=? "]+'
   - '\.\. image::[\w\.:\/\-=? "]+(drive.google|drive.usercontent.google)[\w\.:\/\-=? "]+'
   - '\.\. figure::[\w\.:\/\-=? "]+(drive.google|drive.usercontent.google)[\w\.:\/\-=? "]+'
+  - '!\[[^\n]*\]\([^\n]*assets\.ubuntu[^\n]*\)'
+  - '\.\. (image|figure)::[^\n]+assets\.ubuntu'
+  - '(:::|```+)\{(image|figure)\}[^\n]+assets\.ubuntu'
   
