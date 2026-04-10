@@ -416,14 +416,93 @@ rules:
                        let value = 10;  // Initialize value
           severity: suggestion
   # For 017, see the end of this file, as the content is long.
-  # 019-no-google-drive-images:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  019-no-external-images:
+     cases:
+     # Google Drive
+       - id: valid
+         filetypes: [md]
+         content: "![alt](https://drive.google.com/file/d/abc123)"
+         expect:
+           triggers: 1
+           severity: error
+       - id: valid
+         filetypes: [rst]
+         content: ".. image:: https://drive.google.com/file/d/abc123"
+         expect:
+           triggers: 1
+           severity: error
+       - id: valid
+         filetypes: [rst]
+         content: ".. figure:: https://drive.google.com/file/d/abc123"
+         expect:
+           triggers: 1
+           severity: error
+     # Asset manager - Markdown
+       - id: valid
+         filetypes: [md]
+         content: "![alt](https://assets.ubuntu.com/v1/abc123)"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - RST image
+       - id: valid
+         filetypes: [rst]
+         content: ".. image:: https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - RST figure
+       - id: valid
+         filetypes: [rst]
+         content: ".. figure:: https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - MyST with backticks
+       - id: valid
+         filetypes: [md]
+         content: "```{image} https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - MyST with colons
+       - id: valid
+         filetypes: [md]
+         content: ":::{image} https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - MyST figure with backticks
+       - id: valid
+         filetypes: [md]
+         content: "```{figure} https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Asset manager - MyST figure with colons
+       - id: valid
+         filetypes: [md]
+         content: ":::{figure} https://assets.ubuntu.com/v1/abc123"
+         expect:
+           triggers: 1
+           severity: error
+      # Should NOT trigger - local repo images
+       - id: invalid
+         filetypes: [md]
+         content: "![alt](images/local-image.png)"
+         expect:
+           triggers: 0
+       - id: invalid
+         filetypes: [rst]
+         content: ".. image:: images/local-image.png"
+         expect:
+           triggers: 0
+       - id: invalid
+         filetypes: [md]
+         content: "```{image} images/local-image.png"
+         expect:
+           triggers: 0
+      
   025a-latinisms-with-english-equivalents:
     cases:
       - id: latin-terms-with-substitutions
