@@ -1,4 +1,4 @@
-# 19 - No Google Drive links
+# 19 - No external images
 
 extends: existence
 message: "Don't use images from Google Drive or the asset manager. Store images in the repository."
