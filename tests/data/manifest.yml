@@ -423,85 +423,105 @@ rules:
          filetypes: [md]
          content: "![alt](https://drive.google.com/file/d/abc123)"
          expect:
-           triggers: 1
+           triggers: 
+             - "![alt](https://drive.google.com/file/d/abc123)"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
        - id: valid
          filetypes: [rst]
          content: ".. image:: https://drive.google.com/file/d/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ".. image:: https://drive.google.com/file/d/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
        - id: valid
          filetypes: [rst]
          content: ".. figure:: https://drive.google.com/file/d/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ".. figure:: https://drive.google.com/file/d/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
      # Asset manager - Markdown
        - id: valid
          filetypes: [md]
          content: "![alt](https://assets.ubuntu.com/v1/abc123)"
          expect:
-           triggers: 1
+           triggers:
+             - "![alt](https://assets.ubuntu.com/v1/abc123)"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - RST image
        - id: valid
          filetypes: [rst]
          content: ".. image:: https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ".. image:: https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - RST figure
        - id: valid
          filetypes: [rst]
          content: ".. figure:: https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ".. figure:: https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - MyST with backticks
        - id: valid
          filetypes: [md]
          content: "```{image} https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - "```{image} https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - MyST with colons
        - id: valid
          filetypes: [md]
          content: ":::{image} https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ":::{image} https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - MyST figure with backticks
        - id: valid
          filetypes: [md]
          content: "```{figure} https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - "```{figure} https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Asset manager - MyST figure with colons
        - id: valid
          filetypes: [md]
          content: ":::{figure} https://assets.ubuntu.com/v1/abc123"
          expect:
-           triggers: 1
+           triggers:
+             - ":::{figure} https://assets.ubuntu.com/v1/abc123"
            severity: error
+           message_regex: "Don't use images from Google Drive or the asset manager"
       # Should NOT trigger - local repo images
        - id: invalid
          filetypes: [md]
          content: "![alt](images/local-image.png)"
          expect:
-           triggers: 0
+           triggers: []
        - id: invalid
          filetypes: [rst]
          content: ".. image:: images/local-image.png"
          expect:
-           triggers: 0
+           triggers: []
        - id: invalid
          filetypes: [md]
          content: "```{image} images/local-image.png"
          expect:
-           triggers: 0
+           triggers: []
       
   025a-latinisms-with-english-equivalents:
     cases:
