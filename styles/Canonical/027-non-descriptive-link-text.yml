@@ -10,7 +10,7 @@ nonword: true
 ignorecase: true
 level: warning
 tokens:
-  - '\[[^\]]*\b(?:here|these|this|more|link)\b[^\]]*\]\([^\)]+\)'
-  - '`[^`<]*\b(?:here|these|this|more|link)\b[^`<]*<[^>]+>`_'
-  - ':(?:doc|ref|any|download|reftype|class|func):`[^`]*\b(?:here|these|this|more|link)\b[^`]*`'
-  - '\{(external(\+[^\n\s:]+)?:([^\n\s:]+:)?)?(doc|ref|any|download|reftype|class|func)\}`[^`]*\b(?:here|these|this|more|link)\b[^`]*`' 
+  - '\[[^\]]*\b(here|these|this|more|link)\b[^\]]*\]\([^\)]+\)'
+  - '`[^`<]*\b(here|these|this|more|link)\b[^`<]*<[^>]+>`_'
+  - ':([^\s\n:]+:)*(doc|ref|any|download|reftype|class|func):`[^`]*\b(here|these|this|more|link)\b[^`]*`'
+  - '\{([^\}\s\n]+:)*(doc|ref|any|download|reftype|class|func)\}`[^`]*\b(here|these|this|more|link)\b[^`]*`' 

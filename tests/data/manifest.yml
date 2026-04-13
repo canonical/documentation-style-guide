@@ -694,8 +694,8 @@ rules:
             - ':any:`learn more <target>`'
             - ':download:`this <file.tar.gz>`'
             - ':ref:`try this <label>`'
-            - ':ref:`this <some.address>`'
-            - ':class:`this link <some.address>`'
+            - ':external+invname:ref:`this <some.address>`'
+            - ':external+invname:py:class:`this link <some.address>`'
           severity: warning
       - id: clean-link-text
         filetypes: [md, rst]
