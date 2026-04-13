@@ -622,6 +622,8 @@ rules:
           See {any}`these <something>` for examples.
           Get {download}`this <file.tar.gz>` archive.
           See {ref}`try this <label>` for more.
+          See {external+sphinxcontrib-mermaid:doc}`this link <target>` for details.
+          See {external+sphinxcontrib-mermaid:py:class}`this link <target>` for details.
         expect:
           triggers:
             - '[here](https://example.com)'
@@ -646,6 +648,8 @@ rules:
             - '{any}`these <something>`'
             - '{download}`this <file.tar.gz>`'
             - '{ref}`try this <label>`'
+            - '{external+sphinxcontrib-mermaid:doc}`this link <target>`'
+            - '{external+sphinxcontrib-mermaid:py:class}`this link <target>`'
           severity: warning
       - id: bad-link-text-rst
         filetypes: [rst]
@@ -668,6 +672,8 @@ rules:
           See :any:`learn more <target>` too.
           Get :download:`this <file.tar.gz>` archive.
           See :ref:`try this <label>` for more.
+          See :external+invname:ref:`this <some.address>`
+          See :external+invname:py:class:`this link <some.address>`
         expect:
           triggers:
             - '`here <https://example.com>`_'
@@ -688,6 +694,8 @@ rules:
             - ':any:`learn more <target>`'
             - ':download:`this <file.tar.gz>`'
             - ':ref:`try this <label>`'
+            - ':ref:`this <some.address>`'
+            - ':class:`this link <some.address>`'
           severity: warning
       - id: clean-link-text
         filetypes: [md, rst]
