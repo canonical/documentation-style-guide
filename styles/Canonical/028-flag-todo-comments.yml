@@ -6,7 +6,7 @@ link: https://docs.ubuntu.com/styleguide/en
 scope: raw
 nonword: true
 ignorecase: true
-level: warning
+level: suggestion
 tokens:
   - <!-- +TODO:? +(?!#\d+|\[\w+\-\d+\])
   - ..( +|\s+  )TODO:? +(?!#\d+|\[\w+\-\d+\])

@@ -738,7 +738,7 @@ rules:
             - "<!--   todo   "
             - "<!-- TODO: "
             - "<!-- TODO "
-          severity: warning
+          severity: suggestion
       - id: bad-todo-rst
         filetypes: [rst]
         content: |
@@ -758,7 +758,7 @@ rules:
             - ".. todo: "
             - "..   todo   "
             - "..\n    todo "
-          severity: warning
+          severity: suggestion
       - id: acceptable-todo-text
         filetypes: [md, rst]
         content: |
@@ -770,7 +770,7 @@ rules:
           <!--   TODO #55  Update these links before release. -->
         expect:
           triggers: []
-          severity: warning
+          severity: suggestion
   # 400-Enforce-inclusive-terms:
   #   cases:
   #     - id: valid
