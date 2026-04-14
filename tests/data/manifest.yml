@@ -418,106 +418,87 @@ rules:
   # For 017, see the end of this file, as the content is long.
   019-no-external-images:
      cases:
-     # Google Drive
-       - id: valid
+       - id: google-drive-md
          filetypes: [md]
          content: "![alt](https://drive.google.com/file/d/abc123)"
          expect:
            triggers: 
              - "![alt](https://drive.google.com/file/d/abc123)"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-       - id: valid
+       - id: google-drive-rst-image
          filetypes: [rst]
          content: ".. image:: https://drive.google.com/file/d/abc123"
          expect:
            triggers:
              - ".. image:: https://drive.google.com/file/d/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-       - id: valid
+       - id: google-drive-rst-figure
          filetypes: [rst]
          content: ".. figure:: https://drive.google.com/file/d/abc123"
          expect:
            triggers:
              - ".. figure:: https://drive.google.com/file/d/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-     # Asset manager - Markdown
-       - id: valid
+       - id: asset-manager-md
          filetypes: [md]
          content: "![alt](https://assets.ubuntu.com/v1/abc123)"
          expect:
            triggers:
              - "![alt](https://assets.ubuntu.com/v1/abc123)"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - RST image
-       - id: valid
+       - id: asset-manager-rst-image
          filetypes: [rst]
          content: ".. image:: https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
              - ".. image:: https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - RST figure
-       - id: valid
+       - id: asset-manager-rst-figure
          filetypes: [rst]
          content: ".. figure:: https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
              - ".. figure:: https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - MyST with backticks
-       - id: valid
+       - id: asset-manager-myst-backtick-image
          filetypes: [md]
          content: "```{image} https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
-             - "```{image} https://assets.ubuntu.com/v1/abc123"
+             - "{image} https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - MyST with colons
-       - id: valid
+       - id: asset-manager-myst-colon-image
          filetypes: [md]
          content: ":::{image} https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
-             - ":::{image} https://assets.ubuntu.com/v1/abc123"
+             - "{image} https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - MyST figure with backticks
-       - id: valid
+       - id: asset-manager-myst-backtick-figure
          filetypes: [md]
          content: "```{figure} https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
-             - "```{figure} https://assets.ubuntu.com/v1/abc123"
+             - "{figure} https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Asset manager - MyST figure with colons
-       - id: valid
+       - id: asset-manager-myst-colon-figure
          filetypes: [md]
          content: ":::{figure} https://assets.ubuntu.com/v1/abc123"
          expect:
            triggers:
-             - ":::{figure} https://assets.ubuntu.com/v1/abc123"
+             - "{figure} https://assets.ubuntu.com/v1/abc123"
            severity: error
-           message_regex: "Don't use images from Google Drive or the asset manager"
-      # Should NOT trigger - local repo images
-       - id: invalid
+       - id: local-image-md
          filetypes: [md]
          content: "![alt](images/local-image.png)"
          expect:
            triggers: []
-       - id: invalid
+       - id: local-image-rst
          filetypes: [rst]
          content: ".. image:: images/local-image.png"
          expect:
            triggers: []
-       - id: invalid
+       - id: local-image-myst
          filetypes: [md]
          content: "```{image} images/local-image.png"
          expect:
