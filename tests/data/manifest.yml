@@ -718,7 +718,59 @@ rules:
           See {ref}`linking guide <label>` for help.
         expect:
           triggers: []
-          severity: suggestion
+          severity: warning
+  028-flag-todo-comments:
+    cases:
+      - id: bad-todo-md
+        filetypes: [md]
+        content: |
+          <!-- TODO: Update these links before release. -->
+          <!--   TODO   Update these links before release. -->
+          <!-- todo: Update these links before release. -->
+          <!--   todo   Update these links before release. -->
+          <!-- TODO: DOCPR-0001 Update these links before release. -->
+          <!-- TODO Issue #55 Update these links before release. -->
+        expect:
+          triggers:
+            - "<!-- TODO: "
+            - "<!--   TODO   "
+            - "<!-- todo: "
+            - "<!--   todo   "
+            - "<!-- TODO: "
+            - "<!-- TODO "
+          severity: warning
+      - id: bad-todo-rst
+        filetypes: [rst]
+        content: |
+          .. TODO: Update these links before release.
+          ..   TODO   Update these links before release.
+          ..
+              TODO Update these links before release.
+          .. todo: Update these links before release.
+          ..   todo   Update these links before release.
+          ..
+              todo Update these links before release.
+        expect:
+          triggers:
+            - ".. TODO: "
+            - "..   TODO   "
+            - "..\n    TODO "
+            - ".. todo: "
+            - "..   todo   "
+            - "..\n    todo "
+          severity: warning
+      - id: acceptable-todo-text
+        filetypes: [md, rst]
+        content: |
+          .. TODO [DOCPR-0001]: Update these links before release.
+          ..   TODO #1000  Update these links before release.
+          ..
+              TODO: [TST-2742] Update these links before release.
+          <!-- TODO: #55 Update these links before release. -->
+          <!--   TODO #55  Update these links before release. -->
+        expect:
+          triggers: []
+          severity: warning
   # 400-Enforce-inclusive-terms:
   #   cases:
   #     - id: valid

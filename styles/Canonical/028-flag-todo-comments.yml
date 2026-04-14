@@ -1,0 +1,12 @@
+# 028 - Flag TODO comments in MD and RST files
+
+extends: existence
+message: "Don't use TODO comments, or reference Issues TODO #<num> or Jira tickets [<ticket>]."
+link: https://docs.ubuntu.com/styleguide/en
+scope: raw
+nonword: true
+ignorecase: true
+level: warning
+tokens:
+  - <!-- +TODO:? +(?!#\d+|\[\w+\-\d+\])
+  - ..( +|\s+  )TODO:? +(?!#\d+|\[\w+\-\d+\])
