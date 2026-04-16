@@ -72,6 +72,78 @@ rules:
         expect:
           triggers: []
           severity: error
+      - id: ubuntu-names-rst
+        filetypes: [rst]
+        content: |
+          Ubuntu 20.04 has been released.
+          Ubuntu 16.04 was a popular release.
+          Ubuntu 19.04 LTS was never a thing.
+          Ubuntu 15.04 LTS was never a thing.
+          Ubuntu 20.04 LTS (Badger) is wrong.
+          Ubuntu 18.04 LTS (Wrong Name) is bad.
+          Ubuntu 16.04 LTS (Wrong Xerus) is bad.
+          Ubuntu 14.04 LTS (Incorrect Tahr) is bad.
+          Ubuntu 12.04 LTS (NotPrecise) is bad.
+          Ubuntu 22.10 (Wrong Kudu) is bad.
+          Ubuntu 23.04 (Incorrect Lobster) is bad.
+          Ubuntu 21.10 (Bad Indri) is bad.
+          Ubuntu 20.10 (NotGroovy) is bad.
+          Ubuntu 19.10 (Bad Ermine) is bad.
+          Ubuntu 17.10 (NotArtful) is bad.
+          Ubuntu 17.04 (NotZesty) is bad.
+          Ubuntu 16.10 (NotYak) is bad.
+          Ubuntu 15.10 (NotWily) is bad.
+          Ubuntu 14.10 (NotUtopic) is bad.
+          Ubuntu 13.10 (NotSaucy) is bad.
+          Ubuntu 13.04 (NotRaring) is bad.
+          Ubuntu 12.10 (NotQuantal) is bad.
+          Ubuntu 11.10 (NotOneiric) is bad.
+          Ubuntu 11.04 (NotNatty) is bad.
+          Ubuntu 10.10 (NotMaverick) is bad.
+          Ubuntu 10.04 LTS (NotLucid) is bad.
+        expect:
+          triggers:
+            - 'Ubuntu 20.04'
+            - 'Ubuntu 16.04'
+            - 'Ubuntu 19.04 LTS'
+            - 'Ubuntu 15.04 LTS'
+            - 'Ubuntu 20.04 LTS ('
+            - 'Ubuntu 18.04 LTS ('
+            - 'Ubuntu 16.04 LTS ('
+            - 'Ubuntu 14.04 LTS ('
+            - 'Ubuntu 12.04 LTS ('
+            - 'Ubuntu 22.10 ('
+            - 'Ubuntu 23.04 ('
+            - 'Ubuntu 21.10 ('
+            - 'Ubuntu 20.10 ('
+            - 'Ubuntu 19.10 ('
+            - 'Ubuntu 17.10 ('
+            - 'Ubuntu 17.04 ('
+            - 'Ubuntu 16.10 ('
+            - 'Ubuntu 15.10 ('
+            - 'Ubuntu 14.10 ('
+            - 'Ubuntu 13.10 ('
+            - 'Ubuntu 13.04 ('
+            - 'Ubuntu 12.10 ('
+            - 'Ubuntu 11.10 ('
+            - 'Ubuntu 11.04 ('
+            - 'Ubuntu 10.10 ('
+            - 'Ubuntu 10.04 LTS ('
+          severity: error
+      - id: valid-rst
+        filetypes: [rst]
+        content: |
+          Ubuntu 24.04 LTS
+          Ubuntu 24.04 LTS (Noble Numbat)
+          Ubuntu 22.04 LTS (Jammy Jellyfish)
+          Ubuntu 20.04 LTS (Focal Fossa)
+          Ubuntu 22.10 (Kinetic Kudu)
+          Ubuntu 23.10 (Mantic Minotaur)
+          Ubuntu 24.10 (Oracular Oriole)
+          Ubuntu 24.04 LTS (Noble)
+        expect:
+          triggers: []
+          severity: error
   004-Canonical-product-names: # Not currently working for multi-word terms
     cases:
       - id: canonical-product-names
@@ -136,6 +208,34 @@ rules:
           triggers:
             - pro
           severity: error
+      - id: clean
+        filetypes: [md, rst]
+        content: |
+          Anbox Cloud is a streaming platform.
+          Charmed Kubeflow provides ML workflows.
+          The Canonical Observability Stack is integrated.
+          Use Juju to deploy and manage applications.
+          Landscape environment monitoring is available.
+          The Landscape layout is configurable.
+          Launchpad hosts source code.
+          Use LXD for system containers.
+          MAAS provisions bare metal.
+          MicroCeph provides distributed storage.
+          MicroCloud simplifies deployment.
+          MicroK8s is lightweight Kubernetes.
+          MicroOVN manages networking.
+          MicroStack enables OpenStack.
+          Multipass runs Ubuntu VMs.
+          Snapcraft builds snap packages.
+          The snapd daemon manages snaps.
+          Ubuntu Core is for IoT devices.
+          Ubuntu Pro provides security updates.
+          Ubuntu Server is for data centres.
+          The Ubuntu project is open source.
+          Ubuntu provides a range of tools.
+        expect:
+          triggers: []
+          severity: error
   005-Industry-product-names:
     cases:
       - id: valid
@@ -167,6 +267,23 @@ rules:
             - Google cloud
             - Influxdb
             - mattermost
+          severity: warning
+      - id: clean
+        filetypes: [md, rst]
+        content: |
+          NVIDIA provides GPU acceleration.
+          Deploy OpenStack for cloud infrastructure.
+          Use PostgreSQL as the database backend.
+          Kubernetes orchestrates containers.
+          AWS provides cloud services.
+          MySQL is a relational database.
+          Docker packages applications in containers.
+          Kubeflow manages ML pipelines.
+          Google Cloud Platform offers computing resources.
+          InfluxDB stores time series data.
+          Mattermost enables team collaboration.
+        expect:
+          triggers: []
           severity: warning
   006-Contractions-forbidden:
     cases:
@@ -200,14 +317,56 @@ rules:
             - gotta
             - o'clock
           severity: warning
-  # 007-Headings-sentence-case:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+      - id: clean
+        filetypes: [md, rst]
+        content: |
+          This is not a contraction.
+          How did you feel yesterday?
+          How will you feel tomorrow?
+          One would expect this to pass.
+          Something is off with this.
+          This sentence may not pass.
+          Our checks may have backfired.
+          We are going to change some sentences.
+          We got to make changes.
+        expect:
+          triggers: []
+  007-Headings-sentence-case:
+    cases:
+      - id: title-case-md
+        filetypes: [md]
+        content: |
+          ## This Is a Title Case Heading
+          ### Getting Started With Ubuntu And Juju
+        expect:
+          triggers:
+            - 'This Is a Title Case Heading'
+            - 'Getting Started With Ubuntu And Juju'
+          severity: warning
+      - id: title-case-rst
+        filetypes: [rst]
+        content: |
+          This Is Title Case
+          ===================
+
+          Getting Started With Ubuntu
+          ***************************
+        expect:
+          triggers:
+            - 'This Is Title Case'
+            - 'Getting Started With Ubuntu'
+          severity: warning
+      - id: valid-sentence-case
+        filetypes: [md, rst]
+        content: |
+          This is a correct heading
+          Overview
+          Installation
+          MAAS configuration guide
+          LXD clustering overview
+          Ubuntu deployment steps
+        expect:
+          triggers: []
   008-Headings-no-period:
     cases:
       - id: MD-headings
@@ -217,11 +376,13 @@ rules:
           ## Another heading!
           ### Yet another heading?
           #### Heading without punctuation
+          ##### Last but not least,
         expect:
           triggers:
             - '.'
             - '!'
             - '?'
+            - ','
           severity: suggestion
       - id: RST-headings
         filetypes: [rst]
@@ -237,20 +398,113 @@ rules:
 
           Heading without punctuation
           ###########################
+
+          Last but not least,
+          ********************
         expect:
           triggers:
             - '.'
             - '!'
             - '?'
+            - ','
           severity: suggestion
-  # 009-Headings-no-links:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+      - id: clean-md
+        filetypes: [md]
+        content: |
+          # A simple heading
+          ## Configure the foo.bar setting
+          ### Getting started
+        expect:
+          triggers: []
+      - id: clean-rst
+        filetypes: [rst]
+        content: |
+          A simple heading
+          ================
+
+          Getting started
+          ****************
+        expect:
+          triggers: []
+  009-Headings-no-links:
+    cases:
+      - id: links-in-md-headings
+        filetypes: [md]
+        content: |
+          ## Visit [the guide](example.com)
+
+          A heading with link [here](example.com)
+          ========================================
+
+          ## See <https://example.com>
+
+          A heading with autolink <https://example.com>
+          ==============================================
+        expect:
+          triggers:
+            - |-
+              ## Visit [the guide](example.com)
+            - |
+              A heading with link [here](example.com)
+              ========================================
+            - |-
+              ## See <https://example.com>
+            - |
+              A heading with autolink <https://example.com>
+              ==============================================
+          severity: warning
+      - id: links-in-rst-headings
+        filetypes: [rst]
+        content: |
+          See `user guide <doc/guide>`_ for details
+          ********************************************
+
+          See <https://example.com> link
+          ###################################
+
+          See :ref:`some label` for help
+          *********************************
+
+          See :doc:`topic` for details
+          ******************************
+
+          See https://example.com for details
+          *************************************
+
+          See www.example.com for details
+          **********************************
+        expect:
+          triggers:
+            - |
+              See `user guide <doc/guide>`_ for details
+              ********************************************
+            - |
+              See <https://example.com> link
+              ###################################
+            - |
+              See :ref:`some label` for help
+              *********************************
+            - |
+              See :doc:`topic` for details
+              ******************************
+            - |
+              See https://example.com for details
+              *************************************
+            - |
+              See www.example.com for details
+              **********************************
+          severity: warning
+      - id: valid-headings-no-links
+        filetypes: [md, rst]
+        content: |
+          ## A normal heading
+
+          A plain heading
+          ================
+
+          ## Use the `foo.bar` command
+        expect:
+          triggers: []
   010-Punctuation-double-spaces:
     cases:
       - id: valid
@@ -268,6 +522,15 @@ rules:
             - '?  '
             - '!  '
           severity: warning
+      - id: clean
+        filetypes: [md, rst]
+        content: |
+          Two spaces after a sentence. Is fine with one space.
+          This will be fine though.
+          And this is fine? Yes it is.
+          This is also fine! Great.
+        expect:
+          triggers: []
   # 012-Date-format:
   #   cases:
   #     - id: valid
@@ -312,30 +575,152 @@ rules:
         expect:
           triggers: []
           severity: suggestion
-  # 014a-Numbers-greater-than-nine-should-be-in-numeric-form:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
-  # 014b-Numbers-with-five-or-more-digits-must-have-comma-separators:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
-  # 015-No-prompts-in-comments:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  014a-Numbers-greater-than-nine-should-be-in-numeric-form:
+    cases:
+      - id: written-numbers-md
+        filetypes: [md]
+        content: |
+          There are ten servers running.
+          We deployed eleven containers.
+          A total of twelve nodes.
+          About thirteen users reported issues.
+          We need fourteen instances.
+          There are fifteen packages to update.
+          Install sixteen dependencies.
+          Allocate seventeen threads.
+          Reserve eighteen ports.
+          We saw nineteen connections.
+          There are twenty workers.
+          About thirty requests per second.
+        expect:
+          triggers:
+            - ten
+            - eleven
+            - twelve
+            - thirteen
+            - fourteen
+            - fifteen
+            - sixteen
+            - seventeen
+            - eighteen
+            - nineteen
+            - twenty
+            - thirty
+          severity: suggestion
+      - id: written-numbers-rst
+        filetypes: [rst]
+        content: |
+          There are forty nodes in the cluster.
+          About fifty users in the queue.
+          We measured sixty operations.
+          There are seventy entries.
+          About eighty records processed.
+          A total of ninety items remain.
+          Over one hundred tests passed.
+          About one thousand lines of configuration.
+          Over one million requests served.
+          About one billion records in total.
+          Over one trillion calculations completed.
+        expect:
+          triggers:
+            - forty
+            - fifty
+            - sixty
+            - seventy
+            - eighty
+            - ninety
+            - hundred
+            - thousand
+            - million
+            - billion
+            - trillion
+          severity: suggestion
+      - id: valid-numeric-form
+        filetypes: [md, rst]
+        content: |
+          There are 10 servers running.
+          We deployed 20 instances.
+          The total is 100 nodes.
+          The tenth item in the list is special.
+          Configure the fifteenth parameter.
+        expect:
+          triggers: []
+          severity: suggestion
+  014b-Numbers-with-five-or-more-digits-must-have-comma-separators:
+    cases:
+      - id: large-numbers-md
+        filetypes: [md]
+        content: |
+          The file is 10000 bytes.
+          Serving 99999 requests.
+          Population is 1000000 people.
+        expect:
+          triggers:
+            - '10000'
+            - '99999'
+            - '1000000'
+          severity: suggestion
+      - id: large-numbers-rst
+        filetypes: [rst]
+        content: |
+          The dataset has 50000 rows.
+          Port 65536 is invalid.
+        expect:
+          triggers:
+            - '50000'
+            - '65536'
+          severity: suggestion
+      - id: valid-comma-separated
+        filetypes: [md, rst]
+        content: |
+          The file is 10,000 bytes.
+          Port 8080 is common.
+          Use 1234 as the identifier.
+          The value is 999 items.
+        expect:
+          triggers: []
+          severity: suggestion
+  015-No-prompts-in-comments:
+    cases:
+      - id: prompts-in-md-code
+        filetypes: [md]
+        content: |
+          Run the following commands:
+
+          ```bash
+          $ sudo apt update
+          % make install
+             $ snap install lxd
+          ```
+        expect:
+          triggers:
+            - '$'
+            - '%'
+            - '   $'
+          severity: warning
+      - id: prompts-in-rst-code
+        filetypes: [rst]
+        content: |
+          Run the following commands:
+
+          .. code-block:: bash
+
+             $ snap install lxd
+             % make build
+        expect:
+          triggers:
+            - '   $'
+            - '   %'
+          severity: warning
+      - id: valid-no-prompts
+        filetypes: [md, rst]
+        content: |
+          Reading package lists...
+          Building dependency tree...
+          0 upgraded, 1 newly installed.
+          Setting up lxd (latest) ...
+        expect:
+          triggers: []
   016-No-inline-comments:
     cases:
       - id: md-hash-comments
@@ -415,6 +800,66 @@ rules:
                    function process() {
                        let value = 10;  // Initialize value
           severity: suggestion
+      - id: rst-code-hash-comments
+        filetypes: [rst]
+        content: |
+          Here is some code with inline comments.
+
+          .. code:: python
+
+             def calculate():
+                 result = 42  # This is the answer
+                 return result  # Return the value
+        expect:
+          triggers:
+            - |
+                .. code:: python
+
+                   def calculate():
+                       result = 42  # This is the answer
+          severity: suggestion
+      - id: rst-sourcecode-hash-comments
+        filetypes: [rst]
+        content: |
+          Here is some code with inline comments.
+
+          .. sourcecode:: python
+
+             def calculate():
+                 result = 42  # This is the answer
+                 return result  # Return the value
+        expect:
+          triggers:
+            - |
+                .. sourcecode:: python
+
+                   def calculate():
+                       result = 42  # This is the answer
+          severity: suggestion
+      - id: clean-md
+        filetypes: [md]
+        content: |
+          Here is some clean code:
+
+          ```python
+          def calculate():
+              result = 42
+              return result
+          ```
+        expect:
+          triggers: []
+      - id: clean-rst
+        filetypes: [rst]
+        content: |
+          Here is some clean code.
+
+          .. code-block:: python
+
+             def calculate():
+                 result = 42
+                 return result
+        expect:
+          triggers: []
   # For 017, see the end of this file, as the content is long.
   019-no-external-images:
      cases:
@@ -487,6 +932,20 @@ rules:
          expect:
            triggers:
              - "{figure} https://assets.ubuntu.com/v1/abc123"
+           severity: error
+       - id: drive-usercontent-md
+         filetypes: [md]
+         content: "![alt](https://drive.usercontent.google.com/download?id=abc123)"
+         expect:
+           triggers:
+             - "![alt](https://drive.usercontent.google.com/download?id=abc123)"
+           severity: error
+       - id: drive-usercontent-rst-image
+         filetypes: [rst]
+         content: ".. image:: https://drive.usercontent.google.com/download?id=abc123"
+         expect:
+           triggers:
+             - ".. image:: https://drive.usercontent.google.com/download?id=abc123"
            severity: error
        - id: local-image-md
          filetypes: [md]
@@ -571,6 +1030,40 @@ rules:
           That is the most important principle.
         expect:
           triggers: []
+      - id: latin-alternation-branches
+        filetypes: [md, rst]
+        content: |
+          This list continues with et cetera more items.
+          Sometimes written as etcetera in prose.
+          Old texts may use &c for brevity.
+          The phrase exempli gratia means for example.
+          Shortened to eg in casual writing.
+          Or written as e.g without a trailing dot.
+          The phrase id est is commonly used.
+          Shortened to ie in some texts.
+          Or as i.e without the final dot.
+          Please nota bene these important details.
+          Shortened as nb in some references.
+          Or as n.b without the trailing dot.
+          This option versus the alternative is better.
+          Use viz without dot for specifically.
+        expect:
+          triggers:
+            - et cetera
+            - etcetera
+            - "&c"
+            - exempli gratia
+            - eg
+            - e.g
+            - id est
+            - ie
+            - i.e
+            - nota bene
+            - nb
+            - n.b
+            - versus
+            - viz
+          severity: suggestion
   025b-latinisms-to-reconsider:
     cases:
       - id: time-format-ampm
@@ -610,6 +1103,7 @@ rules:
           The argument continues ad nauseum.
           As shown by Smith et al. in their paper.
           The same method was used (ibid).
+          The full form ibidum is also used sometimes.
           The text contains an error [sic].
           Let the correction stet as written.
         expect:
@@ -618,6 +1112,7 @@ rules:
             - ad nauseum
             - et al
             - ibid
+            - ibidum
             - sic
             - stet
           severity: suggestion
@@ -675,6 +1170,21 @@ rules:
             - '::::{hint}'
             - '::::{tip}'
           severity: suggestion
+      - id: clean-admonitions
+        filetypes: [md, rst]
+        content: |
+          .. note::
+              This is an acceptable admonition.
+          .. warning::
+              This is also acceptable.
+          ```{note}
+          This is a MyST note.
+          ```
+          ```{warning}
+          This is a MyST warning.
+          ```
+        expect:
+          triggers: []
   027-non-descriptive-link-text:
     cases:
       - id: bad-link-text-md
@@ -704,6 +1214,9 @@ rules:
           See {ref}`try this <label>` for more.
           See {external+sphinxcontrib-mermaid:doc}`this link <target>` for details.
           See {external+sphinxcontrib-mermaid:py:class}`this link <target>` for details.
+          See {class}`this <mymodule.MyClass>` for class docs.
+          See {func}`here <mymodule.myfunc>` for function docs.
+          See {reftype}`this <some-label>` for reference.
         expect:
           triggers:
             - '[here](https://example.com)'
@@ -730,6 +1243,9 @@ rules:
             - '{ref}`try this <label>`'
             - '{external+sphinxcontrib-mermaid:doc}`this link <target>`'
             - '{external+sphinxcontrib-mermaid:py:class}`this link <target>`'
+            - '{class}`this <mymodule.MyClass>`'
+            - '{func}`here <mymodule.myfunc>`'
+            - '{reftype}`this <some-label>`'
           severity: warning
       - id: bad-link-text-rst
         filetypes: [rst]
@@ -754,6 +1270,9 @@ rules:
           See :ref:`try this <label>` for more.
           See :external+invname:ref:`this <some.address>`
           See :external+invname:py:class:`this link <some.address>`
+          See :class:`this <mymodule.MyClass>` for class docs.
+          See :func:`here <mymodule.myfunc>` for function docs.
+          See :reftype:`this <some-label>` for reference.
         expect:
           triggers:
             - '`here <https://example.com>`_'
@@ -776,6 +1295,9 @@ rules:
             - ':ref:`try this <label>`'
             - ':external+invname:ref:`this <some.address>`'
             - ':external+invname:py:class:`this link <some.address>`'
+            - ':class:`this <mymodule.MyClass>`'
+            - ':func:`here <mymodule.myfunc>`'
+            - ':reftype:`this <some-label>`'
           severity: warning
       - id: clean-link-text
         filetypes: [md, rst]
@@ -799,14 +1321,77 @@ rules:
         expect:
           triggers: []
           severity: suggestion
-  # 400-Enforce-inclusive-terms:
-  #   cases:
-  #     - id: valid
-  #       filetypes: [md, rst]
-  #       content:
-  #       expect:
-  #         triggers:
-  #         severity:
+  400-Enforce-inclusive-terms:
+    cases:
+      - id: inclusive-terms-md
+        filetypes: [md]
+        content: |
+          Add the IP to the whitelist.
+          The blacklisted domains must be removed.
+          Remove the black hat from the system.
+          The white hats reported the vulnerability.
+          Detected an illegal character in the input.
+          The master node controls all replicas.
+          This is a dumb terminal.
+          Use a dummy value for testing.
+          Avoid creating dummies in production.
+          The rule was grandfathered in.
+          Hey guys, check this out.
+          Perform a sanity check before deploying.
+        expect:
+          triggers:
+            - whitelist
+            - blacklisted
+            - black hat
+            - white hats
+            - illegal character
+            - master
+            - dumb
+            - dummy
+            - dummies
+            - grandfathered
+            - guys
+            - sanity check
+          severity: error
+      - id: inclusive-terms-rst
+        filetypes: [rst]
+        content: |
+          The whitelisting process is outdated.
+          Use a black-list to block traffic.
+          Configure the slave node to follow the leader.
+          Multiple slaves can be configured.
+          The chairman called the meeting.
+          The foreman supervised the build.
+          The process hangs if the socket is closed.
+          Estimate the man hours required.
+          Detect a man-in-the-middle attack.
+          The station is manned at all times.
+          Use a middleman service for the exchange.
+        expect:
+          triggers:
+            - whitelisting
+            - black-list
+            - slave
+            - slaves
+            - chairman
+            - foreman
+            - hangs
+            - man hours
+            - man-in-the-middle
+            - manned
+            - middleman
+          severity: error
+      - id: valid-inclusive-language
+        filetypes: [md, rst]
+        content: |
+          Add the IP to the allowlist.
+          The primary node controls all replicas.
+          Use a placeholder value for testing.
+          Perform a verification check before deploying.
+          The path /master/config is set correctly.
+          Configure the jenkins-slave agent.
+        expect:
+          triggers: []
   500-Repeated-words:
     cases:
       - id: repeat
