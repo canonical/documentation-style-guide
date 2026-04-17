@@ -730,6 +730,7 @@ rules:
           <!--   todo   Update these links before release. -->
           <!-- TODO: DOCPR-0001 Update these links before release. -->
           <!-- TODO Issue #55 Update these links before release. -->
+          % TODO: Update these links before release.
         expect:
           triggers:
             - "<!-- TODO: "
@@ -738,6 +739,7 @@ rules:
             - "<!--   todo   "
             - "<!-- TODO: "
             - "<!-- TODO "
+            - "% TODO: "
           severity: suggestion
       - id: bad-todo-rst
         filetypes: [rst]
@@ -768,6 +770,8 @@ rules:
               TODO: [TST-2742] Update these links before release.
           <!-- TODO: #55 Update these links before release. -->
           <!--   TODO #55  Update these links before release. -->
+          % TODO [TST-0000]: Update these links before release.
+          % TODO: #55 Update these links before release.
         expect:
           triggers: []
           severity: suggestion

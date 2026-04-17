@@ -8,5 +8,6 @@ nonword: true
 ignorecase: true
 level: suggestion
 tokens:
-  - <!-- +TODO:? +(?!#\d+|\[\w+\-\d+\])
-  - ..( +|\s+  )TODO:? +(?!#\d+|\[\w+\-\d+\])
+  - <!-- +TODO:? +(?!#\d+|\[\w+-\d+\])
+  - \% TODO:? +(?!#\d+|\[\w+-\d+\])
+  - ..( +|\s+  )TODO:? +(?!#\d+|\[\w+-\d+\])
