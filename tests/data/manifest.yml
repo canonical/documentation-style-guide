@@ -45,14 +45,13 @@ rules:
           | 22.04  | Ubuntu 22.04 (Kinetic Kudu) |
         expect:
           triggers:
-            - 'Ubuntu 18.10 ('
+            - 'Ubuntu 18.10 (Cuttlefish)'
             - 'Ubuntu 21.10 LTS'
             - 'Ubuntu 22.04'
-            - 'Ubuntu 22.04'
-            - 'Ubuntu 22.04 LTS ('
+            - 'Ubuntu 22.04 LTS (Jimmy)'
             - 'Ubuntu 23.10 LTS'
             - 'Ubuntu 24.04'
-            - 'Ubuntu 24.04 LTS ('
+            - 'Ubuntu 24.04 LTS (Numbat)'
           severity: error
       - id: valid-md
         filetypes: [md]
@@ -103,32 +102,32 @@ rules:
           Ubuntu 10.04 LTS (NotLucid) is bad.
         expect:
           triggers:
-            - 'Ubuntu 20.04'
+            - 'Ubuntu 10.04 LTS (NotLucid)'
+            - 'Ubuntu 10.10 (NotMaverick)'
+            - 'Ubuntu 11.04 (NotNatty)'
+            - 'Ubuntu 11.10 (NotOneiric)'
+            - 'Ubuntu 12.10 (NotQuantal)'
+            - 'Ubuntu 13.04 (NotRaring)'
+            - 'Ubuntu 13.10 (NotSaucy)'
+            - 'Ubuntu 14.10 (NotUtopic)'
+            - 'Ubuntu 15.10 (NotWily)'
+            - 'Ubuntu 16.10 (NotYak)'
+            - 'Ubuntu 17.04 (NotZesty)'
+            - 'Ubuntu 17.10 (NotArtful)'
+            - 'Ubuntu 19.10 (Bad Ermine)'
+            - 'Ubuntu 20.10 (NotGroovy)'
+            - 'Ubuntu 21.10 (Bad Indri)'
+            - 'Ubuntu 22.10 (Wrong Kudu)'
+            - 'Ubuntu 23.04 (Incorrect Lobster)'
+            - 'Ubuntu 14.04 LTS (Incorrect Tahr)'
+            - 'Ubuntu 16.04 LTS (Wrong Xerus)'
+            - 'Ubuntu 18.04 LTS (Wrong Name)'
+            - 'Ubuntu 20.04 LTS (Badger)'
+            - 'Ubuntu 12.04 LTS (NotPrecise)'
+            - 'Ubuntu 15.04 LTS'
             - 'Ubuntu 16.04'
             - 'Ubuntu 19.04 LTS'
-            - 'Ubuntu 15.04 LTS'
-            - 'Ubuntu 20.04 LTS ('
-            - 'Ubuntu 18.04 LTS ('
-            - 'Ubuntu 16.04 LTS ('
-            - 'Ubuntu 14.04 LTS ('
-            - 'Ubuntu 12.04 LTS ('
-            - 'Ubuntu 22.10 ('
-            - 'Ubuntu 23.04 ('
-            - 'Ubuntu 21.10 ('
-            - 'Ubuntu 20.10 ('
-            - 'Ubuntu 19.10 ('
-            - 'Ubuntu 17.10 ('
-            - 'Ubuntu 17.04 ('
-            - 'Ubuntu 16.10 ('
-            - 'Ubuntu 15.10 ('
-            - 'Ubuntu 14.10 ('
-            - 'Ubuntu 13.10 ('
-            - 'Ubuntu 13.04 ('
-            - 'Ubuntu 12.10 ('
-            - 'Ubuntu 11.10 ('
-            - 'Ubuntu 11.04 ('
-            - 'Ubuntu 10.10 ('
-            - 'Ubuntu 10.04 LTS ('
+            - 'Ubuntu 20.04'
           severity: error
       - id: valid-rst
         filetypes: [rst]
@@ -320,15 +319,15 @@ rules:
       - id: clean
         filetypes: [md, rst]
         content: |
-          This is not a contraction.
-          How did you feel yesterday?
-          How will you feel tomorrow?
-          One would expect this to pass.
-          Something is off with this.
-          This sentence may not pass.
-          Our checks may have backfired.
-          We are going to change some sentences.
-          We got to make changes.
+          This isn't a forbidden contraction.
+          Don't you feel great?
+          Isn't that a great feeling?
+          It's expected that this will pass.
+          Something I've seen pass is this sentence.
+          This should've passed.
+          That's nice.
+          Can't we just let this pass?
+          Let's stop now.
         expect:
           triggers: []
   007-Headings-sentence-case:
@@ -357,17 +356,44 @@ rules:
             - 'Getting Started With Ubuntu'
           severity: warning
       - id: valid-sentence-case
-        filetypes: [md, rst]
+        filetypes: [md]
         content: |
-          This is a correct heading
-          Overview
-          Installation
-          MAAS configuration guide
-          LXD clustering overview
-          Ubuntu deployment steps
+          ## This is a correct heading
+          ## Overview
+          ## Installation
+          ## MAAS configuration guide
+          ## LXD clustering overview
+          ## Ubuntu deployment steps
+          ## Getting started with Ubuntu and Juju
         expect:
           triggers: []
-  008-Headings-no-period:
+      - id: valid-sentence-case-rst
+        filetypes: [rst]
+        content: |
+          This is a correct heading
+          *************************
+
+          Overview
+          ********
+
+          Installation
+          ************
+
+          MAAS configuration guide
+          ************************
+
+          LXD clustering overview
+          ***********************
+
+          Ubuntu deployment steps
+          ***********************
+
+          Getting started with Ubuntu and Juju
+          ************************************
+
+        expect:
+          triggers: []
+  008-Headings-no-punctuation:
     cases:
       - id: MD-headings
         filetypes: [md]
@@ -422,8 +448,8 @@ rules:
           A simple heading
           ================
 
-          Getting started
-          ****************
+          Getting started with foo.bar
+          ****************************
         expect:
           triggers: []
   009-Headings-no-links:
@@ -844,7 +870,8 @@ rules:
           ```python
           def calculate():
               result = 42
-              return result
+              return result#s
+          see https://example.com for more info
           ```
         expect:
           triggers: []
@@ -858,6 +885,7 @@ rules:
              def calculate():
                  result = 42
                  return result
+             see https://example.com for more info
         expect:
           triggers: []
   # For 017, see the end of this file, as the content is long.
@@ -999,7 +1027,6 @@ rules:
             - ad hoc
             - ad infinitum
             - cf
-            - caveat
             - circa
             - de facto
             - etc
@@ -1016,7 +1043,6 @@ rules:
             - proviso
             - stanza
             - status quo
-            - verbatim
             - vs.
             - vice versa
             - viz.
@@ -1216,7 +1242,6 @@ rules:
           See {external+sphinxcontrib-mermaid:py:class}`this link <target>` for details.
           See {class}`this <mymodule.MyClass>` for class docs.
           See {func}`here <mymodule.myfunc>` for function docs.
-          See {reftype}`this <some-label>` for reference.
         expect:
           triggers:
             - '[here](https://example.com)'
@@ -1245,7 +1270,6 @@ rules:
             - '{external+sphinxcontrib-mermaid:py:class}`this link <target>`'
             - '{class}`this <mymodule.MyClass>`'
             - '{func}`here <mymodule.myfunc>`'
-            - '{reftype}`this <some-label>`'
           severity: warning
       - id: bad-link-text-rst
         filetypes: [rst]
@@ -1272,7 +1296,6 @@ rules:
           See :external+invname:py:class:`this link <some.address>`
           See :class:`this <mymodule.MyClass>` for class docs.
           See :func:`here <mymodule.myfunc>` for function docs.
-          See :reftype:`this <some-label>` for reference.
         expect:
           triggers:
             - '`here <https://example.com>`_'
@@ -1297,7 +1320,6 @@ rules:
             - ':external+invname:py:class:`this link <some.address>`'
             - ':class:`this <mymodule.MyClass>`'
             - ':func:`here <mymodule.myfunc>`'
-            - ':reftype:`this <some-label>`'
           severity: warning
       - id: clean-link-text
         filetypes: [md, rst]
@@ -1359,7 +1381,7 @@ rules:
           The whitelisting process is outdated.
           Use a black-list to block traffic.
           Configure the slave node to follow the leader.
-          Multiple slaves can be configured.
+          Multiple slaves can be configured for a master.
           The chairman called the meeting.
           The foreman supervised the build.
           The process hangs if the socket is closed.
@@ -1380,6 +1402,7 @@ rules:
             - man-in-the-middle
             - manned
             - middleman
+            -  master
           severity: error
       - id: valid-inclusive-language
         filetypes: [md, rst]
@@ -1389,6 +1412,7 @@ rules:
           Use a placeholder value for testing.
           Perform a verification check before deploying.
           The path /master/config is set correctly.
+          What about `master`
           Configure the jenkins-slave agent.
         expect:
           triggers: []

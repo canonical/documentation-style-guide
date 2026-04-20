@@ -1,7 +1,7 @@
 # 01 - Heading - Do not end with '.'
 
 extends: existence
-message: "Don't use end punctuation in headings."
+message: "Don't use punctuation in headings."
 link: https://docs.ubuntu.com/styleguide/en#headings
 nonword: true
 level: suggestion

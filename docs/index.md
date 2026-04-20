@@ -209,7 +209,7 @@ If it is not the actual product name, it should not be capitalised. Never capita
 
 ## Dates
 
-For consistency, we will use the following date format:
+For consistency, we use the following date format:
 
 * Single day: January 1, 2013  
 * Date range within same month: January 1-2, 2013  
