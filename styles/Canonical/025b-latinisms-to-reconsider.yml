@@ -2,7 +2,7 @@
 
 extends: existence
 message: Use 24-hour time instead of 'AM', or 'PM', .
-link: https://docs.ubuntu.com/styleguide/en#latin-words-and-phrases
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: suggestion
 scope:
   - sentence

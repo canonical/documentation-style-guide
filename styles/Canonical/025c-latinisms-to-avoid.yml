@@ -2,7 +2,7 @@
 
 extends: existence
 message: "Don't use academic Latin terms like 'a posteriori', 'et al', and 'stet'."
-link: https://docs.ubuntu.com/styleguide/en#latin-words-and-phrases
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: suggestion
 scope:
   - sentence

@@ -4,7 +4,7 @@ This repository contains the documentation and the Vale rules for the documentat
 
 The style guide itself is written in Markdown and contained in the `en` directory.
 
-It is published online at: [docs.ubuntu.com/styleguide/en](https://docs.ubuntu.com/styleguide/en)
+It is published online at: [docs.ubuntu.com/styleguide/en](https://canonical-documentation-style-guide.readthedocs-hosted.com/)
 
 ## The Vale rules
 

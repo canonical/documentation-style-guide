@@ -2,7 +2,7 @@
 
 extends: existence
 message: "Don't use punctuation in headings."
-link: https://docs.ubuntu.com/styleguide/en#headings
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 nonword: true
 level: suggestion
 scope: heading

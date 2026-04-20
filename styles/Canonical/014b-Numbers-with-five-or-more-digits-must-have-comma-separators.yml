@@ -1,6 +1,6 @@
 extends: existence
 message: Numbers greater than 999 should have a comma separator - '%s'
-link: https://docs.ubuntu.com/styleguide/en#numbers
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 scope:
   - heading
   - list

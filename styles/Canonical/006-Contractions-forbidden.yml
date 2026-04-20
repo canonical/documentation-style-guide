@@ -2,7 +2,7 @@
 
 extends: substitution
 message: "Consider using '%s' instead of '%s'"
-link: https://docs.ubuntu.com/styleguide/en#contractions
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: warning
 scope:
   - sentence

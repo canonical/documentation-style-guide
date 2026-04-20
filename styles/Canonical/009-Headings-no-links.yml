@@ -2,7 +2,7 @@
 
 extends: existence
 message: "Headings should not contain links"
-link: https://docs.ubuntu.com/styleguide/en/#other-considerations
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 nonword: true
 level: warning
 scope: raw

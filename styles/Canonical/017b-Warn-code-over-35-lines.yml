@@ -1,6 +1,6 @@
 extends: existence
 message: "Use 35 or fewer lines in code blocks"
-link: https://docs.ubuntu.com/styleguide/en/#code-examples-in-documentation
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: warning
 scope: raw
 nonword: true

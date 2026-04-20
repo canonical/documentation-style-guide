@@ -1,6 +1,6 @@
 extends: substitution
 message: "Use '%[1]s' instead of '%[2]s'"
-link: https://docs.ubuntu.com/styleguide/en/#other-canonical-products
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: error
 scope:
   - sentence & ~blockquote

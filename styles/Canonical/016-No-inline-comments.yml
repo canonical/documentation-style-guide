@@ -1,5 +1,6 @@
 extends: existence
 message: "Avoid inline comments in code blocks."
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 scope: raw
 nonword: true
 level: suggestion

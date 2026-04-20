@@ -3,7 +3,7 @@ message: |
   Please use the Ubuntu product name correctly. E.g. Ubuntu 22.04 LTS, Ubuntu
   22.10, Ubuntu 23.04 (Lunar Lobster), Ubuntu 23.10 (Mantic), Ubuntu 24.04 LTS
   (Noble Numbat).
-link: https://docs.ubuntu.com/styleguide/en/#ubuntu
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 nonword: true
 ignorecase: true
 vocab: false

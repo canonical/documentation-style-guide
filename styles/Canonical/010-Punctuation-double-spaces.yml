@@ -2,7 +2,7 @@
 
 extends: existence
 message: "'%s' should have one space."
-link: 
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: warning
 scope:
   - raw

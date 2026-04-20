@@ -1,6 +1,7 @@
 # Uses the built-in dictionary and filters.
 extends: spelling
 message: "The word '%s' seems to be misspelled."
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 level: error
 scope:
   - sentence

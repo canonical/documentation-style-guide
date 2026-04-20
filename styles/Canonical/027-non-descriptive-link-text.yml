@@ -4,6 +4,7 @@
 
 extends: existence
 message: "Use descriptive link text instead of '%s' to improve accessibility."
+link: https://canonical-documentation-style-guide.readthedocs-hosted.com/
 link: https://docs.ubuntu.com/styleguide/en
 scope: raw
 nonword: true
