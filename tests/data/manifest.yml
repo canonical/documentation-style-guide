@@ -143,7 +143,7 @@ rules:
         expect:
           triggers: []
           severity: error
-  004-Canonical-product-names: # Not currently working for multi-word terms
+  004-Canonical-product-names:
     cases:
       - id: canonical-product-names
         filetypes: [md, rst]
@@ -232,6 +232,10 @@ rules:
           Ubuntu Server is for data centres.
           The Ubuntu project is open source.
           Ubuntu provides a range of tools.
+          Lets try websites:
+          snapcraft.io is the Snapcraft website.
+          api.snapcraft.io is the Snapcraft API site.
+          https://api.snapcraft.io is using a protocol.
         expect:
           triggers: []
           severity: error
@@ -768,10 +772,12 @@ rules:
       - id: valid-no-prompts
         filetypes: [md, rst]
         content: |
-          Reading package lists...
-          Building dependency tree...
+          ```
+          Reading package lists "${variable}"...
+          Building dependency 5 % 2 == 1
           0 upgraded, 1 newly installed.
           Setting up lxd (latest) ...
+          ```
         expect:
           triggers: []
   016-No-inline-comments:

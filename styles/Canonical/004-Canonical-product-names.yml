@@ -28,7 +28,7 @@ swap:
   MicroStack: MicroStack
   Multipass: Multipass
   (?<=Canonical )Observability Stack: Observability Stack
-  Snapcraft: Snapcraft
+  Snapcraft(?!\.io): Snapcraft
   snapd: snapd # Vale seems to allow normal capitalisation, may need specific existence rule for Snapd
   Ubuntu Core: Ubuntu Core
   # \b ensures only "Ubuntu Pro" matches, not "Ubuntu project", "Ubuntu provides", etc.
