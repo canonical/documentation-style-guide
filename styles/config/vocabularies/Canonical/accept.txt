@@ -39,6 +39,7 @@ BTS
 BZR
 CA
 CAC
+Canonical
 Canonical Observability Stack
 CBR
 CDK
@@ -253,6 +254,7 @@ PCB
 PCF
 PCKN
 PCRE
+PDF
 PgBouncer
 PKCS
 PKS
