@@ -21,7 +21,7 @@ ANAIS
 Anbox
 Anbox Cloud
 Ansible
-APIs
+APIs?
 APK
 APM
 Appium
@@ -38,7 +38,9 @@ BAU
 BOM
 BTS
 BZR
+CA
 CAC
+Canonical
 Canonical Observability Stack
 CBR
 CDK
@@ -49,6 +51,7 @@ Charmcraft
 Charmed
 Charmed Kubeflow
 Charmhub
+Charmhub Proxy
 CISC
 CLA
 CLI
@@ -80,6 +83,7 @@ Data Integrator
 DBR
 DEP
 Debian
+Dedicated Snap Store
 Devel
 DHCP
 DKMS
@@ -98,6 +102,7 @@ eksctl
 Emmet
 Endian
 Endianness
+Enterprise Store
 EoL
 EoS
 EPMO
@@ -124,6 +129,7 @@ HA
 HAcluster
 HAP
 HAProxy
+High-Availability
 Hockeypuck
 hostname
 HPC
@@ -188,6 +194,7 @@ Mattermost
 MDF
 MDL
 MEC
+Memcached
 Mesos
 Metallb
 MicroCeph
@@ -198,6 +205,7 @@ MicroOVN
 MicroStack
 Mir
 MLflow
+Model Service
 Mojo
 MongoDB
 MOTU
@@ -241,11 +249,13 @@ OVA
 OVAL
 OVN
 OVS
+p11-kit
 P4
 PCB
 PCF
 PCKN
 PCRE
+PDF
 PgBouncer
 PKCS
 PKS
@@ -289,6 +299,7 @@ SDK
 SDR
 SDS
 SEG
+Serial Vault
 SFDC
 Sidekiq
 SIP
