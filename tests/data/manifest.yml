@@ -751,9 +751,9 @@ rules:
           ```
         expect:
           triggers:
-            - '$'
-            - '%'
-            - '   $'
+            - '$ sudo'
+            - '% make'
+            - '   $ snap'
           severity: warning
       - id: prompts-in-rst-code
         filetypes: [rst]
@@ -766,8 +766,8 @@ rules:
              % make build
         expect:
           triggers:
-            - '   $'
-            - '   %'
+            - '   $ snap'
+            - '   % make'
           severity: warning
       - id: valid-no-prompts
         filetypes: [md, rst]
