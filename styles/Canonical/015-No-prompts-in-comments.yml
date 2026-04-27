@@ -5,4 +5,4 @@ scope: raw
 nonword: true
 level: warning
 tokens:
-  - '^[ \t]*[$%] \w+'
+  - '^[ \t]*[$%] [^\s]+'

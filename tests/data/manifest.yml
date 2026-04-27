@@ -236,6 +236,7 @@ rules:
           snapcraft.io is the Snapcraft website.
           api.snapcraft.io is the Snapcraft API site.
           https://api.snapcraft.io is using a protocol.
+          And :ref:`Snapcraft <snapcraft>` is a named reference.
         expect:
           triggers: []
           severity: error
@@ -727,13 +728,30 @@ rules:
             - '50000'
             - '65536'
           severity: suggestion
-      - id: valid-comma-separated
-        filetypes: [md, rst]
+      - id: valid-comma-separated-rst
+        filetypes: [rst]
         content: |
           The file is 10,000 bytes.
           Port 8080 is common.
           Use 1234 as the identifier.
           The value is 999 items.
+          The machine ID is ``12345``.
+          .. code::
+             Port 555555 is invalid.
+        expect:
+          triggers: []
+          severity: suggestion
+      - id: valid-comma-separated-md
+        filetypes: [md]
+        content: |
+          The file is 10,000 bytes.
+          Port 8080 is common.
+          Use 1234 as the identifier.
+          The value is 999 items.
+          The machine ID is `12345`.
+          ```
+          Port 555555 is invalid.
+          ```
         expect:
           triggers: []
           severity: suggestion
@@ -748,12 +766,14 @@ rules:
           $ sudo apt update
           % make install
              $ snap install lxd
+          $ ./run-me.sh
           ```
         expect:
           triggers:
             - '$ sudo'
             - '% make'
             - '   $ snap'
+            - '$ ./run-me.sh'
           severity: warning
       - id: prompts-in-rst-code
         filetypes: [rst]
@@ -764,10 +784,12 @@ rules:
 
              $ snap install lxd
              % make build
+             $ ./run-me.sh
         expect:
           triggers:
             - '   $ snap'
             - '   % make'
+            - '   $ ./run-me.sh'
           severity: warning
       - id: valid-no-prompts
         filetypes: [md, rst]
