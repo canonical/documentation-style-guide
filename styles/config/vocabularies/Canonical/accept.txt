@@ -36,6 +36,7 @@ Azure
 Backports
 BAU
 BOM
+bootloader
 BTS
 BZR
 CA
@@ -144,6 +145,7 @@ Indico
 Infiniband
 InfluxDB
 init
+initramfs
 IOV
 IPMI
 IPU
@@ -359,6 +361,7 @@ URLs
 USB
 UX
 VCS
+vfat
 VMs
 VMware
 VNFD
