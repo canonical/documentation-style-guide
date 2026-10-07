@@ -376,3 +376,4 @@ Yet Another Robot Framework
 ZFS
 ZooKeeper
 zSystems
+asciinema
