@@ -7,7 +7,6 @@ dependencies = [
     "pydantic>=2.0",
     "pytest",
     "PyYAML",
-    "rst2html",
     "vale==3.13.0.0",
 ]
 
